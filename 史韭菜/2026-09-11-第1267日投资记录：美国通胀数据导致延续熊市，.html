@@ -2,124 +2,168 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！</title>
 <style>
-:root { color-scheme: light dark; }
+:root { color-scheme: light; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
   font-size: 16px; line-height: 1.75;
-  max-width: 42rem; margin: 0 auto; padding: 1.2rem 1rem 5rem;
-  background: #ffffff; color: #1f2328;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
 }
-@media (prefers-color-scheme: dark) {
-  body { background: #0d1117; color: #e6edf3; }
-  a { color: #58a6ff; }
-  .meta, .card-meta { color: #8b949e; }
-  .card { border-color: #30363d !important; }
-  blockquote { color: #8b949e; background: #161b22; }
-  code { background: #21262d; }
-  th, td { border-color: #30363d; }
-  hr { border-top-color: #30363d; }
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
 }
-a { color: #0969da; text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 1.45rem; margin: 0.5rem 0 1rem; line-height: 1.4; }
-h2 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
-h3 { font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
-p { margin: 0.7rem 0; }
-ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
-li { margin: 0.25rem 0; }
-hr { border: none; border-top: 1px solid #d0d7de; margin: 1.6rem 0; }
-blockquote {
-  border-left: 3px solid #0969da; padding: 0.2rem 0.9rem; margin: 0.8rem 0;
-  color: #57606a; background: #f6f8fa;
-}
-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em;
-  background: #f6f8fa; padding: 0.15em 0.35em; border-radius: 4px; }
-table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.92em; }
-th, td { border: 1px solid #d0d7de; padding: 0.4rem 0.6rem; text-align: left; }
-.meta { color: #57606a; font-size: 0.88rem; }
-.card {
-  display: block; border: 1px solid #d0d7de; border-radius: 8px;
-  padding: 0.75rem 1rem; margin: 0.6rem 0;
-}
-.card-title { font-weight: 600; line-height: 1.5; }
-.card-meta { color: #57606a; font-size: 0.82rem; margin-top: 0.25rem; }
-.up-h { margin: 1.8rem 0 0.4rem; font-size: 1.15rem; }
-.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; }
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
 details.sub { margin: 1.6rem 0; }
-details.sub summary { cursor: pointer; color: #57606a; font-size: 0.9rem; }
-details.sub pre {
-  white-space: pre-wrap; word-break: break-word; font-family: inherit;
-  font-size: 0.9rem; color: #57606a; background: #f6f8fa;
-  padding: 0.9rem; border-radius: 8px; margin-top: 0.5rem;
-}
-@media (prefers-color-scheme: dark) { details.sub pre { background: #161b22; } }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
 
 /* ---- 左下索引面板 ---- */
-.idx-toggle {
-  position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
-  border: 1px solid #d0d7de; border-radius: 999px;
-  background: #ffffff; color: #1f2328; cursor: pointer;
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
   padding: 0.45rem 0.95rem; font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-@media (prefers-color-scheme: dark) {
-  .idx-toggle { background: #161b22; color: #e6edf3; border-color: #30363d; }
-}
-.idx-panel {
-  position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
   width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
-  border: 1px solid #d0d7de; border-radius: 10px; padding: 0.7rem 0.9rem;
-  background: #ffffff; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-@media (prefers-color-scheme: dark) { .idx-panel { background: #161b22; border-color: #30363d; } }
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
-.idx-panel .idx-up { font-size: 0.85rem; color: #57606a; margin: 0.4rem 0 0.1rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
 .idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
   padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 body.idx-closed .idx-panel { display: none; }
 </style>
 </head>
 <body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
 <a class="back" href="../index.html">&larr; 返回目录</a>
-<h1>第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！</h1><p class="meta">史韭菜 · 2026-09-11 · <a href="https://www.bilibili.com/video/BV1prYL6KEjk" target="_blank">B站原视频 ↗</a> · 官方字幕</p><hr><h1>一句话总结</h1>
-<p>美国CPI引发加息担忧，市场延续熊市，博主持仓回撤明显。</p>
-<h2>核心观点</h2>
-<ul>
-<li>美国CPI数据引发加息风险，市场流动性不足是下跌本质，美元只是诱发因子。</li>
-<li>市场持续大量发新股、大额融资，资金被吸走，杠杆已拉不动。</li>
-<li>当前仅银行股、抱团股、长江电力等防守型标的相对抗跌，其余机会有限。</li>
-<li>持股需放低预期、做好坐过山车心理准备，或持币观望至17号之后。</li>
-<li>港股回购量不足以支撑止跌，市场或需再跌五六个点才能达成多空平衡。</li>
-</ul>
-<h2>提到的标的</h2>
-<ul>
-<li>中海物业：今日除权0.1港币叠加下跌，K线跌5.87%，跌幅较大。</li>
-<li>中国食品：从高点回落6.7%，趋势仍下行，有利润者可避一避。</li>
-<li>海吉亚：今年总回购率超2.2%，中报后回购约1700万，但难敌做空。</li>
-<li>百胜中国、蒙牛、海底捞：今日消费股表现尚可，属大跌后止跌。</li>
-<li>小米、腾讯：科网股前期跌幅惨重，今日反弹。</li>
-<li>长江电力、中国银行：横跨周期，防守属性强。</li>
-</ul>
-<h2>关键数据</h2>
-<ul>
-<li>博主当日回撤1.77个点，大账户亏约6万，小账户亏约1.9。</li>
-<li>中海物业当日跌5.87%（除权0.1港币+下跌约3个点）。</li>
-<li>中国食品从高点回落6.7%。</li>
-<li>海吉亚今年回购率超2.2%，中报后回购约1700万，回购占成交10%-30%。</li>
-<li>A股盈亏比接近10:1。</li>
-<li>海吉亚年回购人民币5亿，市值50亿以内可考虑，40-50亿对应年化约4个点。</li>
-</ul>
-<h2>风险与不确定性</h2>
-<ul>
-<li>美国CPI引发加息风险，市场情绪严峻。</li>
-<li>新股大量发行、大额融资持续抽走市场资金。</li>
-<li>海吉亚回购不足以支撑止跌，可能再跌五六个点。</li>
-<li>博主18号起赴英两周，更新可能因时差延误。</li>
-</ul><details class="sub"><summary>展开完整字幕</summary><pre>啊哈喽
+<h1>第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！</h1><p class="meta">史韭菜 · 2026-09-11 · <a class="lk" href="https://www.bilibili.com/video/BV1prYL6KEjk" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">美国CPI引发加息担忧，市场缺钱，持仓回撤大，博主选择硬扛。</div><div class="hero-foot"><span class="badge mood-偏空">偏空</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">美国CPI数据引发加息风险</div></div><div class="pipe-step"><div class="pipe-text">市场流动性不足，资金被新股和融资抽走</div></div><div class="pipe-step"><div class="pipe-text">只能靠国家队和抱团机构拉银行股护盘</div></div><div class="pipe-step"><div class="pipe-text">大部分股票缺乏资金支撑，持续下跌</div></div><div class="pipe-step"><div class="pipe-text">博主持仓回撤大，选择硬扛等年底再买</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">美国CPI数据导致加息风险，市场延续熊市</div><div class="vp-detail">美元只是诱发因子，本质是市场缺钱</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">市场流动性不足，只能靠国家队和抱团机构拉银行股</div><div class="vp-detail">其他板块没什么机会</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">操作上要么持币到17号，要么持股放低预期坐过山车</div><div class="vp-detail">博主自己选择扛一扛</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">A股亏钱效应比港股更剧烈，盈亏比接近十比一</div><div class="vp-detail">港股指数跌得少主要靠大市值科网股反弹</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">持续发新股和融资抽血，市场资金被吸光</div><div class="vp-detail">深度求索KIMI传出AH两地上市</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">中海物业</span> <span class="tk-logic">除权0.1港币叠加下跌，当日跌5.87%</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">从高点回落6.7%，趋势下行，有利润可避一避</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海吉亚</span> <span class="tk-logic">回购超2.2%，但不足以止跌，可能再跌五六个点</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">银行股</span> <span class="tk-logic">横跨周期，国家队和抱团机构拉估值</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">长江电力</span> <span class="tk-logic">普通防守型，比较能扛</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">小米</span> <span class="tk-logic">港股科网股反弹，前面跌得惨</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">腾讯</span> <span class="tk-logic">港股科网股反弹，前面跌得惨</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">当日回撤</div><div class="data-value">1.77%</div><div class="data-note">年内较大回撤</div></div><div class="data-cell"><div class="data-label">中海物业当日跌幅</div><div class="data-value">-5.87%</div><div class="data-note">一半除权一半下跌</div></div><div class="data-cell"><div class="data-label">中国食品高点回落</div><div class="data-value">6.7%</div><div class="data-note">趋势仍下行</div></div><div class="data-cell"><div class="data-label">海吉亚回购率</div><div class="data-value">超2.2%</div><div class="data-note">中报后回购约1700万</div></div><div class="data-cell"><div class="data-label">A股盈亏比</div><div class="data-value">接近10:1</div><div class="data-note">亏钱效应剧烈</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>美国CPI导致加息风险</div></div><div class="risk"><span class="risk-ic">⚠</span><div>市场持续发新股和融资抽血</div></div><div class="risk"><span class="risk-ic">⚠</span><div>海吉亚回购不足以支撑股价止跌</div></div><div class="risk"><span class="risk-ic">⚠</span><div>A股亏钱效应剧烈，盈亏比接近十比一</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>啊哈喽
 各位亲爱的小伙伴大家好
 我是19菜啊
 等下要去拜菩萨
@@ -408,6 +452,16 @@ A股的亏钱效应比这个港股更强一些啊
 然后大部分股票港股其实付的是蛮多的
 以上就是我的一些观点了
 然后谢谢各位拜拜</pre></details>
-<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息">09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！">09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！">09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。">09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。">09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息"><span class="mood-dot dot-中性"></span>09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！"><span class="mood-dot dot-偏空"></span>09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！"><span class="mood-dot dot-偏空"></span>09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。"><span class="mood-dot dot-中性"></span>09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。"><span class="mood-dot dot-偏空"></span>09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
 </body>
 </html>

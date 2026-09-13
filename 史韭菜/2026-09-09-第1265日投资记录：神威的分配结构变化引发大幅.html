@@ -2,125 +2,168 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。</title>
 <style>
-:root { color-scheme: light dark; }
+:root { color-scheme: light; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
   font-size: 16px; line-height: 1.75;
-  max-width: 42rem; margin: 0 auto; padding: 1.2rem 1rem 5rem;
-  background: #ffffff; color: #1f2328;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
 }
-@media (prefers-color-scheme: dark) {
-  body { background: #0d1117; color: #e6edf3; }
-  a { color: #58a6ff; }
-  .meta, .card-meta { color: #8b949e; }
-  .card { border-color: #30363d !important; }
-  blockquote { color: #8b949e; background: #161b22; }
-  code { background: #21262d; }
-  th, td { border-color: #30363d; }
-  hr { border-top-color: #30363d; }
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
 }
-a { color: #0969da; text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 1.45rem; margin: 0.5rem 0 1rem; line-height: 1.4; }
-h2 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
-h3 { font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
-p { margin: 0.7rem 0; }
-ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
-li { margin: 0.25rem 0; }
-hr { border: none; border-top: 1px solid #d0d7de; margin: 1.6rem 0; }
-blockquote {
-  border-left: 3px solid #0969da; padding: 0.2rem 0.9rem; margin: 0.8rem 0;
-  color: #57606a; background: #f6f8fa;
-}
-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em;
-  background: #f6f8fa; padding: 0.15em 0.35em; border-radius: 4px; }
-table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.92em; }
-th, td { border: 1px solid #d0d7de; padding: 0.4rem 0.6rem; text-align: left; }
-.meta { color: #57606a; font-size: 0.88rem; }
-.card {
-  display: block; border: 1px solid #d0d7de; border-radius: 8px;
-  padding: 0.75rem 1rem; margin: 0.6rem 0;
-}
-.card-title { font-weight: 600; line-height: 1.5; }
-.card-meta { color: #57606a; font-size: 0.82rem; margin-top: 0.25rem; }
-.up-h { margin: 1.8rem 0 0.4rem; font-size: 1.15rem; }
-.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; }
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
 details.sub { margin: 1.6rem 0; }
-details.sub summary { cursor: pointer; color: #57606a; font-size: 0.9rem; }
-details.sub pre {
-  white-space: pre-wrap; word-break: break-word; font-family: inherit;
-  font-size: 0.9rem; color: #57606a; background: #f6f8fa;
-  padding: 0.9rem; border-radius: 8px; margin-top: 0.5rem;
-}
-@media (prefers-color-scheme: dark) { details.sub pre { background: #161b22; } }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
 
 /* ---- 左下索引面板 ---- */
-.idx-toggle {
-  position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
-  border: 1px solid #d0d7de; border-radius: 999px;
-  background: #ffffff; color: #1f2328; cursor: pointer;
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
   padding: 0.45rem 0.95rem; font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-@media (prefers-color-scheme: dark) {
-  .idx-toggle { background: #161b22; color: #e6edf3; border-color: #30363d; }
-}
-.idx-panel {
-  position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
   width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
-  border: 1px solid #d0d7de; border-radius: 10px; padding: 0.7rem 0.9rem;
-  background: #ffffff; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-@media (prefers-color-scheme: dark) { .idx-panel { background: #161b22; border-color: #30363d; } }
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
-.idx-panel .idx-up { font-size: 0.85rem; color: #57606a; margin: 0.4rem 0 0.1rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
 .idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
   padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 body.idx-closed .idx-panel { display: none; }
 </style>
 </head>
 <body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
 <a class="back" href="../index.html">&larr; 返回目录</a>
-<h1>第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。</h1><p class="meta">史韭菜 · 2026-09-09 · <a href="https://www.bilibili.com/video/BV1PjYx6PEnE" target="_blank">B站原视频 ↗</a> · 官方字幕</p><hr><h1>一句话总结</h1>
-<p>神威填权、海底捞减持，均因分红与信托补税新规。</p>
-<h2>核心观点</h2>
-<ul>
-<li>海底捞大股东减持系境外信托补税新规所致，非看空，大宗对敲冲击有限。</li>
-<li>信托补税新规下，高分红、信托控股公司有减持动机；无分红公司无需担忧。</li>
-<li>因补税被迫减持砸出的深坑，若公司质地稳定，是买点。</li>
-<li>神威药业虽业绩衰退，但净现金超市值、愿分红，除权后大幅填权。</li>
-<li>偏好低估值、高现金、高股息、有提高分红预期的标的，回避流动性差且不分红公司。</li>
-</ul>
-<h2>提到的标的</h2>
-<ul>
-<li>海底捞：大股东信托减持27.5亿，因补税，估值仍贵于持仓四股。</li>
-<li>神威药业：中报分红10%+，再发特别股息，填权大涨；净现金约80亿，EV为负。</li>
-<li>海吉亚：持续下跌，无分红无补税义务，控股股东增持，风险不大。</li>
-<li>中国食品：估值比海底捞更有吸引力，稳定性强，分一半利润。</li>
-<li>保利物业：财务结构似神威，增长优于神威，估值低。</li>
-<li>语速科技：杀伤性强，估值无法测算，风险偏好决定下限。</li>
-<li>达氏股份、威高：因业绩衰退撤离小账户。</li>
-<li>中海、韩信、保利：持仓中仍亏损。</li>
-</ul>
-<h2>关键数据</h2>
-<ul>
-<li>海底捞大宗交易：27.5亿元。</li>
-<li>神威药业：净现金80亿+，有息负债3亿，市值约60亿港元。</li>
-<li>信托补税税率：20%；张勇家族税基约60亿，或需缴十多亿。</li>
-<li>海吉亚：控股股东增持超1亿，持股近50%，市值约30亿。</li>
-<li>中国食品股息率约4.5%，若分90%利润可达8%以上。</li>
-</ul>
-<h2>风险与不确定性</h2>
-<ul>
-<li>信托补税新规追溯2023-2025年，高分红信托控股公司存减持风险。</li>
-<li>退通风险杀伤力大，作者曾因卫龙退通被逼离场。</li>
-<li>业绩衰退型标的存估值陷阱嫌疑。</li>
-<li>高估值科技股（如语速科技）估值下限无支撑，风险偏好下降即崩。</li>
-</ul><details class="sub"><summary>展开完整字幕</summary><pre>Hello
+<h1>第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。</h1><p class="meta">史韭菜 · 2026-09-09 · <a class="lk" href="https://www.bilibili.com/video/BV1PjYx6PEnE" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">海底捞股东补税减持大跌，神威特别股息填权大涨</div><div class="hero-foot"><span class="badge mood-中性">中性</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">国家7月更新境外个人及离岸信托补税规则，税率20%</div></div><div class="pipe-step"><div class="pipe-text">张勇家族信托过去三年获海底捞全分红，需补缴巨额税款</div></div><div class="pipe-step"><div class="pipe-text">信托通过大宗交易减持27.5亿套现缴税，非直接砸盘</div></div><div class="pipe-step"><div class="pipe-text">市场误读为大股东看空，股价大跌</div></div><div class="pipe-step"><div class="pipe-text">博主认为公司实质未变，若继续跌则是买点</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">海底捞大宗减持因境外信托补税，非大股东看空</div><div class="vp-detail">张勇夫妇需补缴离岸信托20%税，通过大宗对敲减持27.5亿，未直接砸盘</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">信托补税新规利好回购注销</div><div class="vp-detail">分红需缴20%税，大股东更倾向回购注销而非分红</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">因补税被迫减持导致的下跌是买点</div><div class="vp-detail">公司实质未变，股东非主动卖出</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">神威药业特别股息填权，现金多愿意分红就值得买</div><div class="vp-detail">账面净现金80亿超市值，EV为负，发特别股息后股价大涨</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">不买衰退股，但愿意分红的企业即使衰退也获市场奖赏</div><div class="vp-detail">神威业绩衰退20%多，但分红释放回报，股价上涨</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海底捞</span> <span class="tk-logic">补税减持砸出深坑，若继续跌会考虑买入</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">神威药业</span> <span class="tk-logic">净现金超市值，发特别股息，填权大涨</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海吉亚</span> <span class="tk-logic">无分红无需补税，控股股东增持，现金恢复，风险不大</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">估值比海底捞更有吸引力，稳定性强，可乐品牌可吃老本</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">保利物业</span> <span class="tk-logic">财务结构类似神威，纯现金，增长五个点，估值低</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">语速科技</span> <span class="tk-logic">估值无法计算，亏损严重，风险偏好下降则估值崩塌</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">海底捞大宗交易金额</div><div class="data-value">27.5亿</div><div class="data-note">张勇老婆信托减持</div></div><div class="data-cell"><div class="data-label">离岸信托补税税率</div><div class="data-value">20%</div><div class="data-note">2023-2025年红利需补缴</div></div><div class="data-cell"><div class="data-label">神威药业净现金</div><div class="data-value">80亿以上</div><div class="data-note">有息负债仅3亿，市值约60亿</div></div><div class="data-cell"><div class="data-label">神威中报股息</div><div class="data-value">10%多</div><div class="data-note">除权后当天全部填回</div></div><div class="data-cell"><div class="data-label">大账户今日收益</div><div class="data-value">0.08%</div><div class="data-note">两涨两跌抵消</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>退通风险，流动性杀伤力大</div></div><div class="risk"><span class="risk-ic">⚠</span><div>信托补税新规可能影响其他信托控股公司</div></div><div class="risk"><span class="risk-ic">⚠</span><div>高估值科技股风险偏好下降导致估值崩塌</div></div><div class="risk"><span class="risk-ic">⚠</span><div>央国企提高分红需层层审批，不确定性高</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>Hello
 各位亲爱的小伙伴大家好
 我是十韭菜
 然后今天是第1200啊
@@ -926,6 +969,16 @@ body.idx-closed .idx-panel { display: none; }
 就大概那么些想法吧
 然后感谢各位的支持啊
 拜拜</pre></details>
-<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息">09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！">09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！">09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。">09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。">09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息"><span class="mood-dot dot-中性"></span>09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！"><span class="mood-dot dot-偏空"></span>09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！"><span class="mood-dot dot-偏空"></span>09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。"><span class="mood-dot dot-中性"></span>09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。"><span class="mood-dot dot-偏空"></span>09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
 </body>
 </html>

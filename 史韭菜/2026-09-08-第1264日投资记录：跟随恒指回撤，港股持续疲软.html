@@ -2,128 +2,168 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>第1264日投资记录：跟随恒指回撤，港股持续疲软。</title>
 <style>
-:root { color-scheme: light dark; }
+:root { color-scheme: light; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
   font-size: 16px; line-height: 1.75;
-  max-width: 42rem; margin: 0 auto; padding: 1.2rem 1rem 5rem;
-  background: #ffffff; color: #1f2328;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
 }
-@media (prefers-color-scheme: dark) {
-  body { background: #0d1117; color: #e6edf3; }
-  a { color: #58a6ff; }
-  .meta, .card-meta { color: #8b949e; }
-  .card { border-color: #30363d !important; }
-  blockquote { color: #8b949e; background: #161b22; }
-  code { background: #21262d; }
-  th, td { border-color: #30363d; }
-  hr { border-top-color: #30363d; }
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
 }
-a { color: #0969da; text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1 { font-size: 1.45rem; margin: 0.5rem 0 1rem; line-height: 1.4; }
-h2 { font-size: 1.15rem; margin: 1.8rem 0 0.6rem; }
-h3 { font-size: 1.05rem; margin: 1.4rem 0 0.5rem; }
-p { margin: 0.7rem 0; }
-ul, ol { padding-left: 1.4rem; margin: 0.6rem 0; }
-li { margin: 0.25rem 0; }
-hr { border: none; border-top: 1px solid #d0d7de; margin: 1.6rem 0; }
-blockquote {
-  border-left: 3px solid #0969da; padding: 0.2rem 0.9rem; margin: 0.8rem 0;
-  color: #57606a; background: #f6f8fa;
-}
-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88em;
-  background: #f6f8fa; padding: 0.15em 0.35em; border-radius: 4px; }
-table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.92em; }
-th, td { border: 1px solid #d0d7de; padding: 0.4rem 0.6rem; text-align: left; }
-.meta { color: #57606a; font-size: 0.88rem; }
-.card {
-  display: block; border: 1px solid #d0d7de; border-radius: 8px;
-  padding: 0.75rem 1rem; margin: 0.6rem 0;
-}
-.card-title { font-weight: 600; line-height: 1.5; }
-.card-meta { color: #57606a; font-size: 0.82rem; margin-top: 0.25rem; }
-.up-h { margin: 1.8rem 0 0.4rem; font-size: 1.15rem; }
-.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; }
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
 details.sub { margin: 1.6rem 0; }
-details.sub summary { cursor: pointer; color: #57606a; font-size: 0.9rem; }
-details.sub pre {
-  white-space: pre-wrap; word-break: break-word; font-family: inherit;
-  font-size: 0.9rem; color: #57606a; background: #f6f8fa;
-  padding: 0.9rem; border-radius: 8px; margin-top: 0.5rem;
-}
-@media (prefers-color-scheme: dark) { details.sub pre { background: #161b22; } }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
 
 /* ---- 左下索引面板 ---- */
-.idx-toggle {
-  position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
-  border: 1px solid #d0d7de; border-radius: 999px;
-  background: #ffffff; color: #1f2328; cursor: pointer;
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
   padding: 0.45rem 0.95rem; font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-@media (prefers-color-scheme: dark) {
-  .idx-toggle { background: #161b22; color: #e6edf3; border-color: #30363d; }
-}
-.idx-panel {
-  position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
   width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
-  border: 1px solid #d0d7de; border-radius: 10px; padding: 0.7rem 0.9rem;
-  background: #ffffff; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-@media (prefers-color-scheme: dark) { .idx-panel { background: #161b22; border-color: #30363d; } }
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
 .idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
-.idx-panel .idx-up { font-size: 0.85rem; color: #57606a; margin: 0.4rem 0 0.1rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
 .idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
   padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 body.idx-closed .idx-panel { display: none; }
 </style>
 </head>
 <body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
 <a class="back" href="../index.html">&larr; 返回目录</a>
-<h1>第1264日投资记录：跟随恒指回撤，港股持续疲软。</h1><p class="meta">史韭菜 · 2026-09-08 · <a href="https://www.bilibili.com/video/BV1PrbV69EMA" target="_blank">B站原视频 ↗</a> · 官方字幕</p><hr><h1>一句话总结</h1>
-<p>跟随恒指回撤，港股疲软，重点分析恒隆地产债务问题。</p>
-<h2>核心观点</h2>
-<ul>
-<li>今日回撤-0.38%，与恒指一致，港股受外围扰动持续下跌。</li>
-<li>市场炒作转向农业、厄尔尼诺相关农产品，因套牢盘少。</li>
-<li>恒隆地产核心问题：无房开货值、净负债超300亿、收租回报低，股息建立在举债基础上。</li>
-<li>泡泡玛特单店效益衰退，靠铺货对冲，与达势股份逻辑相似，利润维持存疑。</li>
-<li>国内长债吸引力低，建议持短债ETF或逆回购保持流动性。</li>
-</ul>
-<h2>提到的标的</h2>
-<ul>
-<li>恒隆地产：净负债高、无货值、收租ROA仅1%，建议270亿市值以内再考虑。</li>
-<li>恒隆集团：与恒隆地产问题相同，息率更低。</li>
-<li>中国食品：抛压大但资金承接，成交量放大。</li>
-<li>海基亚：回购受2%爬行限额，12月刷新后回购将加速。</li>
-<li>泡泡玛特：现金流健康但利润维持存疑，回避业绩暴增股。</li>
-<li>名创优品：价格尚可，衰退风险低于泡泡玛特。</li>
-<li>达势股份：同店销售额下滑致杀跌，与泡泡玛特类似。</li>
-<li>瑞兹：不派息则沦为老千股，不建议买。</li>
-<li>中国外运：表现较顺。</li>
-<li>常识：净现金结构，EV小于市值，曾以6.7%股息买入。</li>
-</ul>
-<h2>关键数据</h2>
-<ul>
-<li>今日回撤-0.38%；今年收益率0.36%。</li>
-<li>恒隆地产：长期借款478亿，短期借款57亿，现金65亿，存货138亿，总资产2200亿（2000亿投资物业），年租金净收益约20亿，市值367亿，EV约600亿。</li>
-<li>常识：现金676亿，有息负债400亿，净现金200亿。</li>
-<li>海底捞：现金75亿，有息负债25亿，净现金50亿。</li>
-<li>海基亚今日回购15.1万股，单价10元，约150万元。</li>
-</ul>
-<h2>风险与不确定性</h2>
-<ul>
-<li>港股受外围扰动大，汇率持续下跌。</li>
-<li>恒隆若净负债不解决，加息将侵蚀利润。</li>
-<li>泡泡玛特未披露同店销售额，单店效益衰退风险。</li>
-<li>瑞兹若不派息，股价可能跌至一两毛。</li>
-<li>国内长债收益率已低，资本利得空间有限。</li>
-</ul><details class="sub"><summary>展开完整字幕</summary><pre>哈喽各位亲爱的小伙伴大家好
+<h1>第1264日投资记录：跟随恒指回撤，港股持续疲软。</h1><p class="meta">史韭菜 · 2026-09-08 · <a class="lk" href="https://www.bilibili.com/video/BV1PrbV69EMA" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">跟随恒指回撤，港股疲软，恒隆资产负债表存疑，回避泡泡玛特。</div><div class="hero-foot"><span class="badge mood-偏空">偏空</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">港股受外围扰动持续下跌，恒指回撤-0.38%</div></div><div class="pipe-step"><div class="pipe-text">博主账户跟随回撤，小账户因海基亚反弹无亏损</div></div><div class="pipe-step"><div class="pipe-text">恒隆地产无房开业务，无法快速回笼现金还债</div></div><div class="pipe-step"><div class="pipe-text">净负债超300亿，年租金仅赚20亿，还债需20年以上</div></div><div class="pipe-step"><div class="pipe-text">股息靠不还债维持，若加息财务费用将抵消利润</div></div><div class="pipe-step"><div class="pipe-text">因此要求更低估值，270亿市值以内才考虑</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">港股受外围扰动持续疲软，A股更易赚钱</div><div class="vp-detail">恒指回撤-0.38%，港股下跌家数多于上涨，上证有3000多家上涨</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">市场炒作农业、厄尔尼诺相关农产品</div><div class="vp-detail">套牢盘少，之前没怎么被炒过</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">恒隆核心问题：无房开业务快速回笼现金，净负债超300亿，股息靠不还债维持</div><div class="vp-detail">投资物业2000亿仅赚20亿，ROA约1%，有息负债超500亿</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">泡泡玛特单店效益衰退，靠铺货对冲，类似达势股份</div><div class="vp-detail">Q2环比Q1衰退，未披露同店销售额，回避业绩暴增股</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">国内长债无吸引力，不如短债ETF或逆回购</div><div class="vp-detail">长端收益率已压得很低，资本利得空间小</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">恒隆地产</span> <span class="tk-logic">净负债超300亿，无房开快速回笼现金，股息靠不还债维持，要求更低估值</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">恒隆集团</span> <span class="tk-logic">同样净负债400亿量级，息率比恒隆地产还低</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">抛压大但资金承接，成交量高，收十字星</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海基亚</span> <span class="tk-logic">回购受2%爬行限额，12月刷新后回购会更猛</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">泡泡玛特</span> <span class="tk-logic">单店效益衰退，靠售货机铺货对冲，利润能否维持存疑</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">名创优品</span> <span class="tk-logic">当前价格可以试着投一点，比泡泡玛特衰退风险低</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">达势股份</span> <span class="tk-logic">同店销售额降低导致杀跌，但披萨有粘性</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">瑞兹</span> <span class="tk-logic">不派息可能成老千股，不建议买</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">中国外运</span> <span class="tk-logic">这波蛮顺，挺能扛</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">海底捞</span> <span class="tk-logic">无债务，净现金50亿，分红支持</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">恒指回撤</div><div class="data-value">-0.38%</div><div class="data-note">与博主账户回撤幅度一致</div></div><div class="data-cell"><div class="data-label">恒隆地产长期借款</div><div class="data-value">478亿</div><div class="data-note">短期借款57亿，有息负债超500亿</div></div><div class="data-cell"><div class="data-label">恒隆地产现金</div><div class="data-value">65亿</div><div class="data-note">存货138亿，合计约200亿</div></div><div class="data-cell"><div class="data-label">恒隆地产投资物业</div><div class="data-value">2000亿</div><div class="data-note">总资产2200亿，年租金收益不到20亿</div></div><div class="data-cell"><div class="data-label">恒隆地产股息率</div><div class="data-value">7%</div><div class="data-note">建立在不还债基础上</div></div><div class="data-cell"><div class="data-label">恒隆地产市值</div><div class="data-value">367亿</div><div class="data-note">EV约600亿</div></div><div class="data-cell"><div class="data-label">海底捞现金</div><div class="data-value">75亿</div><div class="data-note">有息负债25亿，净现金50亿</div></div><div class="data-cell"><div class="data-label">海基亚回购</div><div class="data-value">15.1万股</div><div class="data-note">单价10元，约150万，受2%爬行限额</div></div><div class="data-cell"><div class="data-label">今年收益率</div><div class="data-value">0.36%</div><div class="data-note">今天又亏，很快变负</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>港股受外围扰动持续疲软，汇率下跌</div></div><div class="risk"><span class="risk-ic">⚠</span><div>恒隆净负债不解决，加息将侵蚀利润</div></div><div class="risk"><span class="risk-ic">⚠</span><div>泡泡玛特单店效益衰退，利润无法维持</div></div><div class="risk"><span class="risk-ic">⚠</span><div>瑞兹不派息可能成老千股，底部难测</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>哈喽各位亲爱的小伙伴大家好
 我是食韭菜
 然后今天是第1264天的一个记录啊
 如大家所见的话呢
@@ -748,6 +788,16 @@ Q1的话呢比较高一些
 呃以上就是我的想法吧
 啊主要最近这段时间汇率又在跌
 计提了零</pre></details>
-<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息">09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！">09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！">09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。">09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。">09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-13-本周经济数据分析：消费者物价仍然疲软，工业物价以.html" title="本周经济数据分析：消费者物价仍然疲软，工业物价以上游涨价为主，美国通胀环比回升，17日定价85%概率加息"><span class="mood-dot dot-中性"></span>09-13 本周经济数据分析：消费者物价仍然疲软，工业物价以</a><a href="../史韭菜/2026-09-11-第1267日投资记录：美国通胀数据导致延续熊市，.html" title="第1267日投资记录：美国通胀数据导致延续熊市，压力很大，亏损很多！"><span class="mood-dot dot-偏空"></span>09-11 第1267日投资记录：美国通胀数据导致延续熊市，</a><a href="../史韭菜/2026-09-10-第1266日投资记录：AH股灾，市场很困难！.html" title="第1266日投资记录：AH股灾，市场很困难！"><span class="mood-dot dot-偏空"></span>09-10 第1266日投资记录：AH股灾，市场很困难！</a><a href="../史韭菜/2026-09-09-第1265日投资记录：神威的分配结构变化引发大幅.html" title="第1265日投资记录：神威的分配结构变化引发大幅填权，海底捞股东应为境外信托补税导致减持大跌。"><span class="mood-dot dot-中性"></span>09-09 第1265日投资记录：神威的分配结构变化引发大幅</a><a href="../史韭菜/2026-09-08-第1264日投资记录：跟随恒指回撤，港股持续疲软.html" title="第1264日投资记录：跟随恒指回撤，港股持续疲软。"><span class="mood-dot dot-偏空"></span>09-08 第1264日投资记录：跟随恒指回撤，港股持续疲软</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
 </body>
 </html>
