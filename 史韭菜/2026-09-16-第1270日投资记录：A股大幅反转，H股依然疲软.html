@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第1270日投资记录：A股大幅反转，H股依然疲软。</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
+}
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
+details.sub { margin: 1.6rem 0; }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
+
+/* ---- 左下索引面板 ---- */
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.45rem 0.95rem; font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
+.idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
+  padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.idx-closed .idx-panel { display: none; }
+</style>
+</head>
+<body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
+<a class="back" href="../index.html">&larr; 返回目录</a>
+<h1>第1270日投资记录：A股大幅反转，H股依然疲软。</h1><p class="meta">史韭菜 · 2026-09-16 · <a class="lk" href="https://www.bilibili.com/video/BV1psew6eEYw" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">A股日内反转，H股疲软，等加息落地，博主躺平不动</div><div class="hero-foot"><span class="badge mood-中性">中性</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">市场等待加息落地，国内未完全定价加息风险</div></div><div class="pipe-step"><div class="pipe-text">美债收益率接近5%，买美债汇率和利率双亏</div></div><div class="pipe-step"><div class="pipe-text">美元信用衰退，各国搬回黄金，债务可控性担忧</div></div><div class="pipe-step"><div class="pipe-text">人民币应贬值但受非关税壁垒制约，维持现状</div></div><div class="pipe-step"><div class="pipe-text">A股日内由空转多，等加息后看成交量能否回升</div></div><div class="pipe-step"><div class="pipe-text">博主个人躺平卧倒不动，等市场方向明确</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">市场在等今晚加息之锤，风险仍大</div><div class="vp-detail">国内未完全定价加息，不加可能反抽，加了则资金被断头杀</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">美债收益率接近5%，买美债汇率和利率双亏</div><div class="vp-detail">10年期美债今年跌6%，汇率再亏4个点，合计亏7个点</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">人民币应贬值但受非关税壁垒制约，维持现状</div><div class="vp-detail">贬值太厉害会招致关税配额等壁垒，美元加息后增值趋势提供下跌保护</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">美元信用衰退，各国搬回黄金，类似布雷顿森林解体前</div><div class="vp-detail">负债增速远高于GDP增速，债务可控性令人担忧</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">A股日内由空转多，反身性趋势蛮好</div><div class="vp-detail">中午后日内堆量回升，收盘涨4000家</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海基亚</span> <span class="tk-logic">小账户被拖累，回购160多万占成交额17%，空头做空比例近30%</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">龙湖</span> <span class="tk-logic">空头被穿仓，今天涨六个点，有点强平</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海螺创业</span> <span class="tk-logic">杀得最凶，账面便宜但负债高、股利支付率低，只建议买五个点仓位</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">小米</span> <span class="tk-logic">港股权重走势，跌一波后横盘</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">腾讯</span> <span class="tk-logic">港股权重走势，跌一波下来</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">大账户收益</div><div class="data-value">+0.64</div></div><div class="data-cell"><div class="data-label">小账户收益</div><div class="data-value">-0.46</div><div class="data-note">主要被海基亚拖累</div></div><div class="data-cell"><div class="data-label">10年期美债收益率</div><div class="data-value">接近5%</div><div class="data-note">今年跌幅负6%</div></div><div class="data-cell"><div class="data-label">30年期美债</div><div class="data-value">大幅回撤</div></div><div class="data-cell"><div class="data-label">海基亚回购金额</div><div class="data-value">160多万</div><div class="data-note">占成交额约17%</div></div><div class="data-cell"><div class="data-label">海基亚空头做空比例</div><div class="data-value">接近30%</div></div><div class="data-cell"><div class="data-label">海螺创业有息负债</div><div class="data-value">接近300亿</div><div class="data-note">现金等价物20多亿</div></div><div class="data-cell"><div class="data-label">海螺创业股利支付率</div><div class="data-value">28%多</div><div class="data-note">股息率四个多点</div></div><div class="data-cell"><div class="data-label">海螺创业中报现金流</div><div class="data-value">10个亿</div><div class="data-note">含非经常性损益</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>加息落地后资金可能被断头杀</div></div><div class="risk"><span class="risk-ic">⚠</span><div>海基亚空头做空比例近30%，承接不住</div></div><div class="risk"><span class="risk-ic">⚠</span><div>海螺创业有息负债300亿，资本开支未停，股利支付率低</div></div><div class="risk"><span class="risk-ic">⚠</span><div>27年上万亿市值解禁，泡沫股压力大</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>呃hello
+各位亲爱的小伙伴大家好
+我是19菜
+然后我们今天来到了第1270天的一个投资记录
+又来到了一个整数日
+然后今天的话呢大账户是正0.64
+小账户的话呢则是-0.46
+小账户主要为海基亚所拖累
+嗯然后这段时间的话呢也跟大家说过
+其实我们在等今天晚上的加息之锤
+呃今天的话呢有一些资金抢跑嗯
+但是这个风险其实依然是比较大的
+因为呃市场的话呢
+尤其是国内市场
+它并没有完全定价加息的
+它定价的是大概率加息
+所以如果不加的话
+你大概率会反抽几天
+这是大概率的呃
+如果加了的话呢
+可能今天进去的资金又要被断头杀一下
+这个因为利率期限的方向发生变化了
+呃然后其实我们看这段时间市场的提前定价
+就比如说10年期美国国债A7F
+你会发现它的一个跌幅的话呢是比较连贯的
+就这段时间的话
+那10年期美债基本上没有一天打得过空投啊
+全是阴线
+然后呃目前的话呢对标的收益率你可以在其他软件上看到
+已经是接近5%了
+就升天期的这个利率都要接近5%了
+所以这个是有点夸张了
+额10年期的债的话呢
+如果你买个10年期的债的话呢
+今年都给你干了一个负6%的这么一个跌幅了是吧
+额额潜伏前的话呢
+负3.37%就相对来说比较难搞一些
+30年期的话
+那是真正的那个大幅回撤了
+呃
+因此的话呢就是现在的话呢
+比如说你去买个美债
+额账面的话呢
+交易今年亏个三四个点
+然后汇率的话再亏个四个点
+你亏亏亏有个七个点好亏
+也是为什么我基本上不买美债的原因呃
+目前的话呢一个汇率亏一个他的这个利率曲线
+除非你认为未来的这个收益率要从五个点降低到三个点
+四个点
+那你还去搞搞
+因为这样他能抵消抵消汇率亏损
+这个有点难搞的呃
+然后针对人民币增值的这一条路径
+我觉得这个的话呢我们国家目前的情况其实还是有一些呃
+这个供大于求
+实际上还是应该贬值的
+但是目前全球它如果你不去增值的话呢
+他们就会搞一些呃这个这个一些这个非传统化的贸易壁垒对吧
+给你加关税
+给你加配额
+呃
+所以目前的话呢就是呃如果说你的货币贬值的很厉害
+他他们就给你搞一些非关税类的贸易壁垒是吧
+这个的话呢也很恶心嗯
+现在我们国家的话呢
+目前的话呢是维持现状
+然后目前的一个增值趋势的话呢
+在美元后面如果真的开始逐渐加息的话呢
+也能提供一些下下跌保护
+因为你比如说增值了几个点
+然后人家加完息之后
+利率直线朝上
+人家再搬回来几个点
+可能全年利率最终的话呢不会拉的过大
+偏离值好
+后面更深层次原因还是信用衰退的问题
+信用衰退的本质就是说它的一个额负债的一个增长
+可能会大于它的一个国家财富的一个GDP增速啊
+可是配收入的增长啊等等各个指标
+所以目前负债的这个增长速度远高于美国GDP的增速
+是个很大的一个问题呃
+因此大家目前就是比较担心你这个债务的可控性嗯
+包括各国从那个美国的经交所把那个黄金搬回去
+搬到欧洲啊
+包括啊搬回亚洲啊
+都有这种迹象了啊
+嗯有点像那个布雷顿森林体系解体之前
+大家不是把那个黄金都想尽办法往回搬
+导致他最后的黄金库存吃不消
+然后就解体
+这个东西到时候再说吧
+然后另外目前国际贸易本来也是潜移默化发生替代
+不是大家想的噢
+我某一个标志性事件导致美元突然之间不行
+现在大家是缓慢的在提高呃
+全球贸易结算当中
+人民币跟那个欧元的这个占比虽然都是个位数吧
+但是至少在缓慢增加嘛
+他到某个节点的话
+慢慢慢慢就会有效
+因为你很多时候搞的是双边贸易互这个双双臂互换嘛
+但是双倍互换的一个局限性就是你只有大国之间才可以搞双臂互换
+你跟一些小国搞一些双币互换
+他的货币除了买他们国家那么一点为数不多的商品
+你可能我们中国都不想要呃之外是没什么用的啊
+所以这个呃也跟大家说过
+这个东西的话呢
+其实双币互换产产生的国际贸易的额
+货币的闭环
+它只有大国大国之间
+比如说巴西啊
+至少巴西委内瑞拉这种都有
+有点小了
+至少绕巴西那种那种量级吧
+我觉得呃然后另外的话呢目前持仓股的话呢
+整体的话呢也都是处于一个震荡范围
+跟大部分港股差不多
+就跌一下之后的话呢
+这个横盘震荡跌一下之后这样横过来横过来都是这种走势是吧
+都是这种走势啊
+就杀一波之后横盘大家都差不多
+因为港股的话它的权重的话呢基本上也都差不多
+像小米啊之类就就就跌一波
+然后这个地方横着
+然后腾讯啊之类都都差不多啊
+跌跌一波下来很多
+所以目前的话呢市场的话呢就是等17号之锤了
+锤下来之后
+那么我们到时候主要看市场的成交量有没有这个重新回升
+如果能回升上来的话
+那应该下一波还有戏
+否则的话那就慢慢慢慢就会难做
+因为这一波泡沫的东西太多了
+大家后面的话呢有股本逐渐要解禁啊
+有很多股本要解禁嗯
+27年的话那更是有上万亿的市值要解禁
+这个的话那就不是开玩笑的了啊
+因为今年发的大量的科技股
+差的话呢
+股本的解禁呢一年两年的时间都还没过嘛啊
+然后目前的话呢我个人的一个想法的话呢
+就是躺平卧倒不动啊
+因为没有什么想做的
+然后明天晚上的话呢我应该溜出国
+然后这个到月底再回来了
+所以中间直播的话呢
+在英国是直播不了
+因为我们国家好像判断你是国外的IP就不行
+他们在国外呃能够直播的应该是打过申请的向平台
+或者说是呃开了一个回国的这个回家乡的反向VPN
+那个你才能绕过监管啊
+就是很麻烦
+所以直播肯定是播不了了
+呃然后每天视频应该的话
+那时间也会紊乱一点
+因为在那个地方刚落地
+在这个时间差在那边倒来倒去对吧
+呃这个的话呢也请大家谅解
+然后海基亚这段时间的话确实有点没承接住
+但公司的回购的话呢也有
+昨天其实说回购金额比较小
+就160多万
+但考虑到昨天的话呢它的一个额成交量
+本来呃他的这个成交额日线呃
+本来的话呢也就只有一个1000万左右
+还是占了17%左右的
+因此我认为的话
+那这个回购的话呢
+目前主要还是市场空头太厉害了
+空投现在做空比例都接近30%了
+这个的话呢就有点难弄呃
+跟龙湖很像
+但龙湖今天应该是空投被穿仓了
+今天涨六个点吧
+他们有点强平啊
+然后其他我觉得也都大差不差啊
+没有什么需要补充的啊
+然后今天A股的话呢说实话是一个反转性的
+我那时候发了个动态嘛
+我说亏钱效应太激烈了
+这几天因为你好几天跌4000家
+然后下这个中午之后的话呢
+慢慢慢慢日内堆量就开始开始回回报上去
+到收盘的话大概涨4000家
+这种反身性的话呢
+说实话是一个日内呃由空转多的这么一种趋势
+蛮好的
+嗯啧嘶嗯
+然后另外的话呢就这段时间我这两天的话呢稍微比较忙嘛
+所以呃其他东西的这个财报看来也不是很多
+那么很多朋友之前在问我还是比较多的
+还是那个基建系
+目前杀的最凶的应该是海螺创业
+这一批问我什么价格能买的话呢
+海螺创业目前的一个核心特征
+就是说它的账面的数据
+很显然是我认为差不多是是一个比较便宜的价格额
+中报的话呢整体上来讲的话呢
+现金流说实话还是比较健康的
+能做到了十个亿
+主要还是一些非经常性损益的因素
+这种标的的话呢给我依然是就是说你必须要接受他的缺点
+他不是我们那种觉得啊
+你公司可能是五边形或者六边形的
+他这种肯定是三边形
+因为他的这个负债啊
+包括重资产的商业模式
+还有他的回报的这股息支付率
+我认为是偏低的
+这些特征的话都是他有问题的
+他的账面的有息负债的话呢
+干到接近300个亿嘛
+然后手中的额现金等价物就20多个亿
+你说20多个亿现金对300亿的有息负债
+这个是非常紧张的
+关键他的很多项目的话呢还在继续
+资本开支没有停掉啊
+所以海创这种的话呢
+我认为的话呢
+他现在的话呢股利支付率给28%点多
+肯定很明显是偏低了
+但是因为市场把它的股价杀爆了
+导致这么低的股利支付率下
+股息率可能今年衰退完的话呢
+可能还在四个多点对吧
+所以因此我认为海螺创业的核心问题
+他的股利支付率比民航信还要再低一大一大丈
+这个的话呢是最核心的问题啊
+所以海螺创业
+其实我这个企业我希望他的资本开支停掉之后再众筹去搞
+其实跟开那个大唐新能源的视角很像的
+就如果说他的资本开支再这么开的话呢
+我们很难去期望呃
+他有一个资本回馈预期
+因为我这个地方项目开支的这个建设的钱很多
+建那么多固废处理的垃圾场
+对吧
+那我的话那就很难在这边拉高股利支付率
+况且我还有300亿的有息负债放在那里
+所以我认为的话呢
+如果你看300亿的有息负债规模都是它市值的两倍了
+所以这个我认为的话呢这方面的问题是比较大的
+所以这种公司如果你纯粹因为其面板数据去买的话呢
+而忽视掉其实是更深层次的
+EV可能远大于市值
+因为他有大量的净负债嘛
+净负债应该是要加到市值上面的
+因为你的利润要去还这个钱嘛
+所以我认为的话它的EV是明显远大于事实的
+这种公司的话呢
+他的话呢只能维持30%的股利支付率
+这个阶段我个人只建议买五个点仓位啊之类
+就反正是不能超过十个点的
+因为他的话呢我觉得风险还是相对比较大一些啊
+然后其他的话呢我也没有什么需要补充的了
+这大概就是我的</pre></details>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-19-第1272日投资记录：出差路上连续25小时，简单.html" title="第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！"><span class="mood-dot dot-中性"></span>09-19 第1272日投资记录：出差路上连续25小时，简单</a><a href="../史韭菜/2026-09-17-第1271日投资记录：美元加息落地，港A持续调整.html" title="第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。"><span class="mood-dot dot-偏多"></span>09-17 第1271日投资记录：美元加息落地，港A持续调整</a><a href="../史韭菜/2026-09-16-第1270日投资记录：A股大幅反转，H股依然疲软.html" title="第1270日投资记录：A股大幅反转，H股依然疲软。"><span class="mood-dot dot-中性"></span>09-16 第1270日投资记录：A股大幅反转，H股依然疲软</a><a href="../史韭菜/2026-09-15-第1269日投资记录：市场继续深度调整，祭出防御.html" title="第1269日投资记录：市场继续深度调整，祭出防御三字经。"><span class="mood-dot dot-偏空"></span>09-15 第1269日投资记录：市场继续深度调整，祭出防御</a><a href="../史韭菜/2026-09-14-第1268日投资记录：加息日前震荡居多，大跌后勉.html" title="第1268日投资记录：加息日前震荡居多，大跌后勉强回血！"><span class="mood-dot dot-中性"></span>09-14 第1268日投资记录：加息日前震荡居多，大跌后勉</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
+}
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
+details.sub { margin: 1.6rem 0; }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
+
+/* ---- 左下索引面板 ---- */
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.45rem 0.95rem; font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
+.idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
+  padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.idx-closed .idx-panel { display: none; }
+</style>
+</head>
+<body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
+<a class="back" href="../index.html">&larr; 返回目录</a>
+<h1>第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！</h1><p class="meta">史韭菜 · 2026-09-19 · <a class="lk" href="https://www.bilibili.com/video/BV1wVeD6KEsQ" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">博主出差英国，简评市场极端行情与个股现金流</div><div class="hero-foot"><span class="badge mood-中性">中性</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">通胀失控，能源涨价带动下游全面涨价</div></div><div class="pipe-step"><div class="pipe-text">货币端加息压制通胀，但利率曲线仍朝上</div></div><div class="pipe-step"><div class="pipe-text">年底可能二次加息，市场情绪仅短暂释放</div></div><div class="pipe-step"><div class="pipe-text">资金做空部分资产，交易层面压力大于公司基本面</div></div><div class="pipe-step"><div class="pipe-text">现金流强、估值低的资产仍受做空压制</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">市场指数整体朝下，走势极端</div><div class="vp-detail">恒科、恒指均呈下行状态</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">加息落地被解读为利空落地，情绪短暂释放</div><div class="vp-detail">但利率曲线朝上节奏未缓，年底可能二次加息</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">通胀根源在能源涨价，货币端加息可能没有尽头</div><div class="vp-detail">伊朗油价带动能源及下游涨价</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">尾盘大批资产放天量，疑似大型机构仓位校准</div><div class="vp-detail">中国食品、海吉亚、腾讯等出现大额竞价</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">现金流稳定、估值低、盈利强的资产，问题多在交易层面而非公司本身</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">恒生科技指数</span> <span class="tk-logic">整体走势朝下</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">恒生指数</span> <span class="tk-logic">整体走势朝下</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">尾盘有一千四五百万竞价</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海吉亚</span> <span class="tk-logic">尾盘有78万左右压单，中报现金流更新</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">腾讯</span> <span class="tk-logic">尾盘放天量成交</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">安井</span> <span class="tk-logic">业绩还行，产品提价，但股价已杀一大轮</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">行程时长</div><div class="data-value">25小时以上</div><div class="data-note">落地英国加包车</div></div><div class="data-cell"><div class="data-label">时差</div><div class="data-value">8小时</div><div class="data-note">英国比中国晚8小时</div></div><div class="data-cell"><div class="data-label">海吉亚市值</div><div class="data-value">60亿不到</div></div><div class="data-cell"><div class="data-label">海吉亚半年净现金流</div><div class="data-value">5.3亿</div><div class="data-note">历史最高</div></div><div class="data-cell"><div class="data-label">海吉亚自由现金流</div><div class="data-value">3亿左右</div><div class="data-note">管理层中报提及</div></div><div class="data-cell"><div class="data-label">海吉亚估值</div><div class="data-value">9倍左右</div><div class="data-note">动态约9.9</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>利率曲线朝上节奏未缓，年底可能二次加息</div></div><div class="risk"><span class="risk-ic">⚠</span><div>能源通胀根源未除，加息可能没有尽头</div></div><div class="risk"><span class="risk-ic">⚠</span><div>部分资产存在退通尾部风险，资金做空</div></div><div class="risk"><span class="risk-ic">⚠</span><div>做空资金规模与持续时间不可预测</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>啊hello
+各位亲爱的小伙伴大家好
+我是19菜
+然后今天应该是第1270嘶
+今天应该是第1272天
+的一个投资记录啊
+然后现在落地到英国行程的话有20多个小时
+加上后面找人包车呃
+从那个伦敦开到其他城市
+又开了有个四个钟头嘛
+所以这个25个小时以上的行程了
+所以给大家录的就迟了一点
+然后最近这段时间都会待在英国
+到月底的话呢回国呃
+然后呃这段时间的话呢
+这个整体的更新节奏会稍微紊乱一点
+因为白天可能有其他事情
+然后时差有差八个小时
+比如大家看我现在的屏幕的左上角
+是英国时间的9.34
+我们中国是在呃
+我们是在东边嘛对吧
+所以我们比英国早八个小时呃
+也就是说呃我们的话呢是20
+是九点多加八个小时已经到了呃
+周六的这么一个早上05:34了
+而我这边还是周五嗯
+是这么一个事情呃
+然后最近这段时间
+大家会发现市场整体的行情还是比较极端对吧
+不好意思
+有点感冒额
+我们发现市场整体的这个指数
+包括恒科
+恒指整体的一个走势都是一个朝下的一个状态
+呃
+然后短时间之内
+市场认为的话呢加息落地属于是利空落地了
+市场目前是这么解读的啊
+就是利空落地啊
+然后这个涨幅就一点点的回补
+但是这一个涨幅的话呢
+大家也知道它可能不一定会长久
+因为就是现在的话呢
+整个利率曲线
+它朝上的这个节奏可能是没有暂缓的
+到了年底可能有第二次加息的可能性
+呃
+所以的话呢
+市场是短时间把那个压抑了几个月的
+这么一个情绪释放了一下
+之前市场一直在提前调整
+现在你终于调整呃
+落地了是吧
+大家就开始交易一下
+但是这个事情也要跟大家说清楚
+就是利益曲线的曹冲可能短时间是不会停止的
+因为你的根源在于通胀失控
+在于伊朗那个地方的油价带动所有的能源
+下游的万事万物都在涨价
+是这么一回事情
+所以这个如果你不把这个根源
+这个能源的一个通胀给压制住的话呢
+你靠货币端加息的话
+那可能是没有尽头的
+所以这个事情大家还要做谨慎一些
+然后交易策大家会发现
+就是今天尾盘有非常大的进价
+比如说中国食品
+尾盘有额一千四五百万的一个竞价
+包括像海吉亚的话呢
+这个尾盘的话呢有一个呃
+78万左右的一个压单吧
+啊就是有很多的指数在校准对盘
+当然也不一定是恒生综指呃
+总而言之的话呢
+大批量的资产
+包括腾讯啊这个等等
+还有一些热门明星股
+今天尾盘都出现了放天量成交的过程
+应该是有一些大型财富管理机构
+在尾盘进行这个仓位校准
+他们每隔一段时间会进行仓位校准的好呃
+然后其他的话呢我觉得都大差不差啊
+就大呢大概这么一些事情呃
+然后另外的话呢
+这个的话呢大家也需要理解一点
+就是说这个阶段很多朋友也在私信我问我
+A资产啊
+B资产
+C资产呃
+我个人认为的话呢
+如果说你的现金流足够稳定
+估值足够低啊对吧
+然后他整体盈利能力又很强
+有些事情的话呢它只能是交易策的
+而不是公司本身的一个问题呃
+比如说你说像海基啊
+这次他的这个中报更新出来
+不是把现金流也更新了吗是吧
+额现金融更新完
+比如说你看看他的一个市值
+一共也才60亿不到
+他半年度的进性现金流对吧
+可能就已经干了接近5.5点
+这个3亿是历史最高了
+然后因为资本开支降低嘛
+所以他投资现金的流出的话呢
+是从呃过去几年呢动不动六个亿八个亿啊
+降低到两个亿以内
+所以我认为他的自由现金流管理层也在年报中
+新的年报中写了
+就是哦先清的中报中写了就三个亿左右
+所以我认为的话呢
+呃半年净现金流555.3亿啊
+然后自由现金流三页
+它的估值的话呢都在九倍估值左右了啊
+哪怕你算算折九尾弹效
+他的动器的话也干到9.9
+因此我觉得这种资产本身转向速度比较快
+但是市场这个阶段他资金做空吗
+就是呃因为他可能会对他有一点点退通的
+可能的尾部风险
+所以资金在那边做空啊
+他们可能觉得退通啊之类有利可图嘛
+所以这个东西大家交易所上的东西
+你跟镜面上的事情是两码事对吧
+做混的资金有多大
+比例有多大
+持续多久
+这都是不可预测的啊
+我的意思的话呢
+就是你要买的话呢
+你看清楚它的风险是有推送的可能性
+然后整体的一个现金流回报水平
+我当时跟大家在呃
+一个季度以前就跟大家聊到过
+我个人觉得可能一年是能赚到自由限流
+能赚到5.5亿以上的
+现在来看确实是有的
+也没看错是吧
+但是股价的压力主要在做空上
+这个东西我们的话呢也没有办法啊
+呃然后安井之类的话呢出了个业绩还行
+然后这个的话呢是一个上涨
+它有一系列产品提价
+但是也是杀了一大轮了啊
+其他我觉得都大差不差
+没有什么需要补充的呃
+然后因为基本上没有睡觉
+一直都在劳累嘛
+所以等下的话呢呃简单更新一下
+然后就</pre></details>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-19-第1272日投资记录：出差路上连续25小时，简单.html" title="第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！"><span class="mood-dot dot-中性"></span>09-19 第1272日投资记录：出差路上连续25小时，简单</a><a href="../史韭菜/2026-09-17-第1271日投资记录：美元加息落地，港A持续调整.html" title="第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。"><span class="mood-dot dot-偏多"></span>09-17 第1271日投资记录：美元加息落地，港A持续调整</a><a href="../史韭菜/2026-09-16-第1270日投资记录：A股大幅反转，H股依然疲软.html" title="第1270日投资记录：A股大幅反转，H股依然疲软。"><span class="mood-dot dot-中性"></span>09-16 第1270日投资记录：A股大幅反转，H股依然疲软</a><a href="../史韭菜/2026-09-15-第1269日投资记录：市场继续深度调整，祭出防御.html" title="第1269日投资记录：市场继续深度调整，祭出防御三字经。"><span class="mood-dot dot-偏空"></span>09-15 第1269日投资记录：市场继续深度调整，祭出防御</a><a href="../史韭菜/2026-09-14-第1268日投资记录：加息日前震荡居多，大跌后勉.html" title="第1268日投资记录：加息日前震荡居多，大跌后勉强回血！"><span class="mood-dot dot-中性"></span>09-14 第1268日投资记录：加息日前震荡居多，大跌后勉</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
+</body>
+</html>

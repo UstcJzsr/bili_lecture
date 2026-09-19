@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第1269日投资记录：市场继续深度调整，祭出防御三字经。</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
+}
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
+details.sub { margin: 1.6rem 0; }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
+
+/* ---- 左下索引面板 ---- */
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.45rem 0.95rem; font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
+.idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
+  padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.idx-closed .idx-panel { display: none; }
+</style>
+</head>
+<body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
+<a class="back" href="../index.html">&larr; 返回目录</a>
+<h1>第1269日投资记录：市场继续深度调整，祭出防御三字经。</h1><p class="meta">史韭菜 · 2026-09-15 · <a class="lk" href="https://www.bilibili.com/video/BV12gen6dEb6" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">市场深度调整，博主提出防御三字经并观望至17号加息落地。</div><div class="hero-foot"><span class="badge mood-偏空">偏空</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">17号加息未落地，机构不敢动手，成交量收窄。</div></div><div class="pipe-step"><div class="pipe-text">市场深度调整，4000多家下跌，情绪消极。</div></div><div class="pipe-step"><div class="pipe-text">博主提出防御三字经，强调低估值、无息债、大现金等。</div></div><div class="pipe-step"><div class="pipe-text">高估值科技股风险大，低估值高股息资产抗跌。</div></div><div class="pipe-step"><div class="pipe-text">建议观望至17号落地，非必要不开仓。</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">17号加息落地前应观望，机构建仓不超三成。</div><div class="vp-detail">成交量收窄，市场难做。</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">防御三字经：低估值、无息债、大现金、低开支、远融资、高股息、非老千、非周期、弱预期、垄断性、回购注销、靠中央、分散、多睡觉少看盘。</div><div class="vp-detail">熊市生存策略。</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">上证70%以上个股价格低于924，老登股低于80%以上。</div><div class="vp-detail">港股也约70%低于924。</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">高估值科技股如寒武纪、质朴、语速科技风险大。</div><div class="vp-detail">估值过高，下跌空间恐怖。</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">非必要不开仓，等17号加息之锤落地。</div><div class="vp-detail">恒生科技是大熊指数。</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">中海物业</span> <span class="tk-logic">自选股中唯一未跌。</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海吉亚</span> <span class="tk-logic">小账户表现差，-0.4。</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">寒武纪</span> <span class="tk-logic">203倍估值，难持续兑现。</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">质朴</span> <span class="tk-logic">营收低市值高，需融资烧钱。</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">语速科技</span> <span class="tk-logic">开盘1100块，市值四五千亿，营收仅20多亿。</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">PB 1.29，低估值。</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">民航信</span> <span class="tk-logic">PB 0.87，低估值。</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">华润双鹤</span> <span class="tk-logic">并购利尔化学估值七八十倍，账上变净有息负债。</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">福寿园</span> <span class="tk-logic">停牌，年报股息发不出。</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">恒生科技</span> <span class="tk-logic">超级大熊指数，成分股下线深。</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">账户回撤</div><div class="data-value">-0.1几</div><div class="data-note">回撤较小</div></div><div class="data-cell"><div class="data-label">A股下跌家数</div><div class="data-value">4000多家</div><div class="data-note">连续几天盘中</div></div><div class="data-cell"><div class="data-label">合共浮亏</div><div class="data-value">10个点</div><div class="data-note">2万8000点置换成本</div></div><div class="data-cell"><div class="data-label">今年亏损</div><div class="data-value">两三个点</div><div class="data-note">可接受</div></div><div class="data-cell"><div class="data-label">上证低于924个股比例</div><div class="data-value">70%以上</div><div class="data-note">老登股80%以上</div></div><div class="data-cell"><div class="data-label">港股低于924个股比例</div><div class="data-value">70%以上</div><div class="data-note">时间截面问题</div></div><div class="data-cell"><div class="data-label">中国食品PB</div><div class="data-value">1.29</div></div><div class="data-cell"><div class="data-label">民航信PB</div><div class="data-value">0.87</div></div><div class="data-cell"><div class="data-label">物业PB</div><div class="data-value">1.5</div><div class="data-note">贵一点</div></div><div class="data-cell"><div class="data-label">两长PB</div><div class="data-value">0.44</div><div class="data-note">市盈率6</div></div><div class="data-cell"><div class="data-label">另一标的PB</div><div class="data-value">0.40</div><div class="data-note">市盈率12</div></div><div class="data-cell"><div class="data-label">质朴配股折价</div><div class="data-value">九折</div><div class="data-note">发行4.5%总股本</div></div><div class="data-cell"><div class="data-label">股息率</div><div class="data-value">6-7个点</div><div class="data-note">抗熊</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>17号加息落地可能引发市场进一步下跌。</div></div><div class="risk"><span class="risk-ic">⚠</span><div>高估值科技股若AI叙事破灭，下跌空间巨大。</div></div><div class="risk"><span class="risk-ic">⚠</span><div>熊市中企业融资困难，配股摊薄股东权益。</div></div><div class="risk"><span class="risk-ic">⚠</span><div>管理层老千行为可能掏空公司。</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>呃hello
+各位亲爱的小伙伴大家好
+我是食韭菜
+然后今天是第1269天的一个记录
+今天的话呢呃说实话我们这个0.1几啊
+什么算是回撤比较小的了
+今天的整个市场的话呢
+大家也知道是这个山雨欲来风满楼啊对吧
+这个倾巢之下岂有完卵
+所以我们观察到整个A股的话呢
+下跌的家数已经高达嘶
+连续好几天
+就是容易在盘中到达4000多家的一个下跌
+上一个交易日呃
+还算是有点顶回去的啊
+然后这个节日的话呢直接歇菜了
+呃港股的话呢也是一啊
+就是一种连环的一种下跌
+好如果你看5日的话
+你会发经常是大幅低开
+大幅低开对吧
+这样大幅低开呃
+所以的话呢这个市场的话呢我也跟大家说过
+我认为17号落地之前
+你先不要管17号是好是坏对吧
+那个17号这个锤子不落下来呢
+那大家都不敢动手去做对吧
+假设你是机构诶
+有几10亿资金呢
+这个节点你万一众筹进去
+然后给你出个加息
+那你不是被搞死了
+嗯所以我也前面几天也跟大家说过
+这个阶段我认为17号之前泥都是小弄弄的
+然后它的一个特征的话呢
+就是你不管是涨是跌
+成交量都会收窄
+因为大家都有点都有点怕呃
+所以这个阶段的话呢
+我说大家是比较难做的啊
+然后有机构就算想建仓
+也是打个提前量
+提前量一般不会超过三成的呃
+因此我们在这个阶段的话呢
+整体对很多资产的话呢
+都是认为是一个观望态度为主
+呃
+然后这个大家的话呢
+也是这个情绪比较消极了对吧
+这个的话呢呃也没办法
+你看我的自选股这一面
+除了中海物业之外全是绿的呃
+再往底下除了经济之外全是绿的对吧
+中介零星几个超跌股大部分都是一个下跌
+那这种行情的话呢
+我觉得就就就就就是比较难做的啦
+然后小账户的话
+因为海吉亚这段时间表现比较差
+他有-0.4是吧
+大账户慢慢跌着跌着跌着就跌赢了
+上证
+因为他上的太猛了
+啧
+那我们合共的话呢账面的话呢也就浮亏十个点
+还是2万8000点置换的成本啊
+今年的话呢这个这个亏了个两三个点
+我觉得的话呢基本上还算过得去
+因为我们这个老登大家都知道呃
+前面几天我用SCREENER去搜索了一下
+跟912924对比
+股价用的是前复权把股息加回去的一个视角
+呃
+由我们的话呢
+上证已经有70%以上的个股的价格
+是低于924的诶
+就是这个东西老登骨的话呢
+低于的比重可以到达80%以上
+港股的话呢这个因为有大量的新股上市嘛
+他的screen呢是不呃是有问题的
+因为他的这个时间截面很多股票
+现在这个点跟之前那个点没有股价的时候
+他对不上
+所以它会报错
+但港股的话呢
+如果你把那个呃时间就给他往前推一下啊
+呃他基本上来讲的话呢
+我们说也基本上是有70%以上的
+股票的话呢
+价格是低于924了
+那我们在这轮牛市当中
+相当于我们买的这一类型资产
+大部分股个股的股价
+实际上大部分都已经在那轮熊市的价格了
+那我认为的话呢
+呃这个的话呢今年亏个两三个点的话呢
+还能接受
+毕竟你没有搞什么科技股嘛
+呃今年上半年行情也跟你没什么关系
+你就一直在熊市的
+所以的话呢我就提出了我的一些观点啊
+什么观点呢
+就是啧怎么去做好防御啊
+因为我是实盘的话呢
+已经干了1268个交易日
+接今天接近一千一千
+270个交易日的这么一个更新了对吧
+那么我们是完整的
+经历了前面恒生指数的两轮腰斩
+那么这个防守的话呢
+我今天给大家写了一首三字经啊
+这个三字经怎么去理解呢
+就是如果你想在熊市过程当中
+你如果一定要买股票的啊
+你不买股票
+那肯定不用看这个
+为什么你都不参与市场了
+那你还关注这个干嘛呢
+如果说你要去重仓去弄的
+因为我跟大家说过
+我是不择食的啊
+你不要跟我说明天牛市还是明天熊市
+我不知道
+反正我的话呢就看资产微观
+它非常的廉价
+我就会买啊
+这个的话呢就是我是不太择时的
+但是万一未来是一种那种无限下跌
+我不会因为它下跌而提前去卖啊
+假设你认为未来可能会下跌
+现在这个节点你什么样的持仓
+牛市或者熊市都跌的比较少呢对吧
+我说的防疫三字经
+第一个就是低估值
+为什么呢
+因为我们观察到你市场再怎么极端
+你公司的这个估值
+它天然就是有其收益率的含义的对吧
+因为大家在A股待久了
+过于的去在乎这个股价的波动
+所以大家对于估值本身的话呢
+没有锚定这个低估值怎么去理解
+你看很多企业
+你说这个东西它有没有什么很高的投资价值
+我觉得这个的话呢是很难的对吧
+你说像宁德跟中继续创这种算是有业绩对吧
+你比如说搞出这个寒武纪什么
+你说203倍估值的
+你可以说有成长性
+但是你毫无疑问200多倍的估值
+它是很很难的是吧
+你就算有成长性
+你也很难去持续兑现出一百两百%的增长
+包括什么跟大家说过的这个什么啊
+乱七八糟
+我A股做的少
+我们就拿港股来说对
+就给大家举个例子
+比如说我之前跟大家说过
+你说像质朴
+你已经跌到这个程度了对吧
+最近的话呢是十几年跌
+就连续跌了十几天
+我是不是很早就跟大家说过
+我觉得这个股你跌到个两三千亿
+可能都会往下跌的
+是不是为什么
+因为你的话呢
+你比如说3000多亿以上的市值
+你的这个营业收入都只有这个
+即这个这个100个亿都没有的对吧
+你你两三
+你两年之后
+营业收入从十来个亿做到个100多亿
+你已经算的非常成功了对吧
+我就算你两三年之后
+你的营收翻个十倍
+你做到了100多亿的营业收入
+你的市值是不是低估的
+不是低估的
+对你的话呢
+要是个营业收入至少要干到个1000个亿左右
+三倍
+PS对吧
+然后的话呢1000个亿里面
+你净利率比如说做到30%对
+30%啊
+30很难
+20%多的净利率跟腾讯一样
+20%的净利率呃
+你1000多亿的
+你1000亿的营业收入对吧
+20%多的净利啊
+你20多亿的这个收入
+然后20多亿的净利润
+然后你15倍估值
+你可能在港股
+到时候你变成老登之后是刚刚好的一个估值
+对你要干到1000个亿的营业收入呢
+你想想看
+你现在一年才十个亿
+你是个100倍的差距啊
+这个就是我跟大家所说的这个东西
+你一旦买这种高的话呢
+不是说你赚不到钱
+就是万一真的亏起来
+你这个亏的下限是非常恐怖的
+万一后面是熊市
+大家不搞AI叙事
+大家说AI是他妈的路边一条一坨大便对吧
+没有人要
+那你说的话呢
+你现在这个把它当成金子在买的
+到时候发现是坨屎
+你怎么办
+你的话呢到时候是怎么定价的
+最高最乐观
+最后还给你十倍PS
+十倍PS的话
+那就是100%增速的那种定价了
+只有PS比如说你今年干完之后
+给你理想一点
+干到个30亿营收总算多了吧对吧
+你就300亿市值
+那你就跌90个点
+所以就是我跟大家所说是个很恐怖的事情啊
+因为你十倍市效率你又不低的啊
+这个的话呢就是我跟大家说说买D啊
+什么叫做买D买那种营业收入远大于市值
+然后估值非常便宜的
+我们的营运杠杆也要大好
+比如说你是100亿的市值对吧
+你的生意的规模可能是220亿的是吧
+然后的话呢你比如说100亿的市值
+你赚你一年能够赚个这个这个这个这个
+十个亿左右的啊
+呃比如说你250亿的这个市值对吧
+你的营收也要至少有100亿
+如果你净利高一点
+你说像物业股之类100亿的市值的话呢
+你的营收的话可能要干到160亿
+就你的PS的话呢尽量要小
+然后估值的话你要低呃
+名义估值包括自由现金流
+估值尽量全都在个位数
+然后的话呢PB窗尽量也要便宜
+就是你的净资产的话呢
+尽量不要超过1.5对吧
+比如说像中国食品
+我这个1.29呃
+然后民航信是0.87啊
+这个物业是1.5
+这个算是贵一点啦
+这个1.2对吧
+因为这两个都是轻资产的
+然后我们之前做过的很多东西
+像我们以前做的两长啊之类的
+他的PB都是0.44啊
+市盈率都是六对吧啊
+PB都是0.40I
+这个市盈率都是12对吧
+你就是不能跪
+你跪的话
+那就杀起来就没有边界
+包括我跟大家说过的这个什么语速科技啊
+什么的对吧
+你说这个东西的话呢
+你一个是开国际玩笑的对吧
+之前的话呢1100块的开盘价
+你的这个市值的话呢在个四五千亿以上对吧
+那你看看他的营业收入的话呢
+都只有这个
+这个这个可能一年能干个20个多个亿
+就已经很多了
+20多个亿
+你配个4000亿的这个市值
+那你说的话呢
+很多人说我过8年我的估值降到20
+那你过了8年你降到20
+你便宜吗对吧
+你花8年时间
+你把估值降到20倍市盈率
+你只是获得获得了一个合理估值
+就跟现在宁德时代一样的
+就合理估值嘛
+所以就是我跟大家所说的
+你把未来8年的这个算盘都敲进去了
+那你未来8年你赚什么钱呢
+这个的话呢
+就是我跟大家所说的这个三字经的第一句
+你要搞低估值
+为什么低估值的话呢
+你天然就有预期啊
+你现在比如说你是个八倍估值
+你一年就赚12%
+你的这个公司
+那么12%的话
+那我派现一半出来五六个点
+那大家的绝对收益就来了是吧
+这样的话呢
+所以我说那些人的话呢
+他们已经把这个估值
+这个东西已经是完全的给他消灭掉了
+在他们的这个投资观念里面
+你买东西的话
+那肯定要买这个现金流大的对吧
+我个位数估值
+我天生我就能赚十个点以上的
+我这个公司哪怕我不涨不跌
+我浪费时间
+我空号一年
+我十个点收益就来了
+好这就是我跟大家所说的这个低估值
+第二个的话呢叫做没有有息负债
+无息债
+什么意思呢
+就是因为的话呢
+很多公司它的这个利润增长是靠并购驱动
+是靠重资产驱动
+是靠更多钱的投入去弄的
+比如说谁呢
+融资租赁公司对啊
+比如说这种融资租赁公司
+他是背贷款买实物资产
+再把实物资产融资租赁外包给别人这种方式
+所以它它的利润增长
+是跟有息负债的增长是相关的
+融资租赁公司
+你一旦给他断奶断掉
+让他不要再扩表了
+它利润马上就衰退了是吧
+所以我说这一种需要有以债务驱动
+包括很多的科技股
+现在的利润是用大量的投资去浇灌的
+我利润增长了五个亿
+我的有息负债或者我的现金现金减少量
+或者有息负债增加量要50个亿
+然后你说我花50个亿
+去换个五个亿的这么一个利润
+我这个不是一笔好买卖
+是我们希望的是你不要投钱
+你一个产线的这个生产效率高一点
+或者我投一点点钱
+我投个一个亿下去
+你当年就给我产生5000万以上利润
+内部回报率50%对
+所以我说那些背着巨大的有息负债
+再出现增速的这个增速
+我一般觉得是有水分的是吧
+你通过这么大的负债
+这么大的风险
+这么大的资金损耗啊
+相当于你把你两三百万个人的银行存款过去
+开了一家奶茶店
+然后每个月赚了5000块钱
+你高兴死
+我觉得这有什么意义呢
+这个就是我跟大家所说的这么一个东西啊
+呃尽量不要有有息负债
+第三个叫做大现金
+为什么如果未来是熊市的话呢
+大部分企业它是很难去融资的
+大家回想一下我们之前经历过的924
+你企业配股
+你配的出去吗
+你的成交量一天就一点点
+你怎么配的出去是吧
+你配股的话呢
+是不是要大幅的损耗
+我们在熊市底部已经股价跌至又跌
+他再给你搞个配股折价
+那你不是受不了了对吧
+低位摊薄
+所以我说大现金的话呢
+你有主动权
+而且他大不大概率代表你这个公司的资本开支
+是很谨慎的啊
+如果你这个公司的这个管理层是好高骛远
+他不可能让公司账上有很多现金
+他肯定今天并购了
+明天破产了
+还有后天收购了
+当然这个钱早就挥霍一空
+然后给你搞一点增速了对吧
+我我花100个亿去买一家这个威力的子公司
+我还不能出增速吗对吧
+你像我之前说过的那个华润
+华润双鹤
+我用50个亿去买这个利尔化学
+20%的控股权
+20%合并起来
+我不是有增长了吗
+但但是我利尔化学的话呢
+我并购的估值是七八十倍市盈率对吧
+我花了50个亿
+每年增加了这个几千万的利润
+我不是脑子有问题吗对吧
+所以我就说这一种的话呢
+我觉得他这种行为的话呢
+不会不太可能会留下现金
+您像华润双鹤那个一个并购之后
+他账上不是变成净净有息负债了
+原先是净现金贴
+所以我说大现金且长期大现金的企业
+它一般来说对资本开支的考核是比较谨慎的好
+所以大现金这个东西我觉得是很重要的
+如果你这个企业永远都是背在我看不到钱的
+那我觉得你这个公司有毛病
+你的话呢到底有没有给股东创造财富呢
+还是搞了一堆厂房设备
+厂房设备值多少钱呢是吧
+另外一个的话呢就是低开支
+我这个地方开支不是指维持资本开支哦
+我我我这个地方不是指那个并购之类的
+我指的是维持性资本开支
+就是你这个公司的话呢
+如果遇到了极端的
+比如说像口罩之类的风险
+你的话呢有很强的这个抗抗风险能力
+就是说你的资本开支比较低啊
+就像你一个人一样的
+你每天的话呢最低开支的话呢
+因为你可能没有房贷
+车贷啊
+你没有搞一些公司
+你每天的最低收入开支可能就买了两桶泡面
+在用自来水这个水壶里面烧一烧
+你一天就过去了
+如果你苟的话能苟到这个样子
+那这个公司的生存能力是比较强的
+所以低资本开支的话呢
+我一向来是这个审美啊
+比如说我认为的话呢
+比如说你像航信公司啊之类
+我就两个数据中心对吧
+我两三个数据中心承担全中国的航空数据
+那么的话呢我的成本的话呢
+就是这些服务器的运维费用啊
+万一说这个有什么事情的话
+那我就付这个服务器费用
+加一点员工工资就可以了
+那如果说像一些重资产的房地产企业的话呢
+你一旦遇到了这个房价下跌
+但是你要养这么多人
+你有这么多楼盘需要去造
+你这个这个造商品房的钱啊之类的都需要开支
+还有有息负债的财务费用
+你吃不消
+所以低开支我觉得一个是资本维持性
+资本开支要低
+另外一个是他的财务费用要低啊
+呃另外一个叫做远融资
+什么叫做远融资
+我最典型的就举例质朴
+当然你的这个股价的话呢都跌成这个样子了
+因为这个公司我跟大家说
+他创造不出现金流嘛
+所以他需要融资去烧钱的
+你看他在这么低的位置啊
+还要在他在这么低的位置
+从那个3000块钱跌到了只剩下700块了
+他还要在那边折价九折配股
+因为你需要融资呀
+包括阿里巴巴之前的800亿的那个事情对吧
+你融资的话呢
+一方面是股价会因为你九折而下跌五个点以上
+另外一方面是什么
+另外一方面的话呢
+你要摊薄我们股东的权益是吧
+你像质朴去融这笔钱
+又不是没有代价的
+你先融到之后
+我他要发行4.5%的总股本
+那我们原先占公司10%的人
+就变成九点几了是吗
+那你这么不断融资下去
+我们占公司的权益就会越来越少
+所以我就要远离融资
+另外一个叫高股期
+因为有些时候你熊市被套住的情况之下啦
+你遇到什么问题呢
+遇到什么问题
+就是说万一说这个市场真的跟9241样
+我长期就是没有波动了
+没有人交易了
+那么他跟交易所倒闭了一样对吧
+你想一下
+假设交易所倒闭了
+大家的资产都没有办法兑现出去
+那么你唯一的获利方式就是公司
+他每年赚钱分给你对吧
+如果说你一家公司一年给你的息率
+能高到六个点或者七个点
+那我有信心说对吧
+万一交易所关门了
+我的话呢
+每年七个点的这个这个股息拿着的话呢
+我也能过日子
+是吧
+所以这个高股息的话呢
+我觉得是抗抗这个熊是真正的一招啊
+然后什么叫没老千呢
+老签的话呢就是说他要通过一些钱
+一些方式把公司账上的钱套出去
+包括s st
+比如说我们绍兴喜临门那个老板
+这个这个这个程阿华还是陈阿玉对吧
+他把上市公司的账上的三个亿直接拿走啦
+或者干什么经济犯罪对
+所以这个老千这个事情的话呢
+可以把一个好好的公司变得很糟糕
+所以我们对管理层的这个人品
+也是需要一定的考核的
+包括像福寿园现在停牌事件
+搞得我们年报股息都发不出来
+因为年报没发嘛
+所以这个就很头大
+所以这个老千的话呢
+我觉得要小心
+什么叫非周期呢
+就是说周期股它的业绩是极高不稳定的
+你现在看到的业绩
+可能随着大宗价格的波动而成为过眼云烟
+所以如果你不是周期特别擅长的人士
+我原则上建议一众小白尽量不要买周期股
+就是买煤炭石油有色金属黄金股
+还有我跟大家所聊到的一些什么航运股啊之类
+这个东西的话呢
+如果你对这个周期有理解
+你觉得这个东西底层价格能维持强势
+能维持景气好几年
+那你去买是可以的
+但是就我观察下来
+大部分的小白他是搞不清楚的
+他老是在煤炭价格最高诶
+中国神话故事最低的时候去买啊
+油价最高
+海油估值最低的时候去买
+亦或者说是有色金属价格最高对吧
+他们有色金属只有紫金矿业
+估值最低的时候去买
+他们为什么会这么这样子呢
+因为当这个金属价格
+石油价格的价格低迷的时候
+这些企业账面的估值往往会显得很虚高
+比如说变成净亏损或者一两百倍市盈率
+这些小白的话呢
+他们就把它过滤掉了
+那么当这个周期的价格涨到最高的时候
+那个时候企业的利润最大
+它的估值也最低
+大家看到诶
+你只有四五倍市盈率很高息
+它可能就进了对吧
+所以我说是反向的好嘶呃
+另外一个弱预期
+就是说你的一个资本预期定价的折价期限
+最好不要太长
+如果你的预期折现像我刚刚说的
+你像那个呃与世或者制服
+你折到8年以上的话呢
+那么可能我维持150%的这个
+负荷增长呃
+四到5年之后
+我从十多亿的规模涨到了几百亿
+上千亿
+我把PS额从100降到了
+比如说只有只有四五对吧
+我PS降下来之后
+我只是刚刚符合我现在买入的预期
+因为我现在给你4000亿市值
+就代表着我已经在定价
+你78年之后
+PS降到五
+降到个八
+所有个800亿营业收入吗
+我已经定价进去了
+那么如果我现在是一个倒闭预期的话呢
+就是我比如说认为你这个公司现在只有呃
+零点几倍的PBS什么
+我认为你是个清算价格的
+那么万一你有点增速出来的话呢
+那我们可能就有非常好的回报是吧
+所以我觉得弱一期比较重要
+也是为什么我跟大家说
+我喜欢在衰退型行业里面
+找不衰退的这个细分端来个背离
+这基本面跟市场预期背离
+这种我认为是个很好的东西
+比如说你在地产里面搞物业
+在销在食品饮料里面搞可乐对吧
+包括之前在那个呃实物资产里面
+搞那个港西地产
+因为港西地产香港那个地方涨了八个月的价格
+当然上个月跌了是吧
+所以的话呢也是我上游轮两长的由来
+就是就是这个市场预期的反转
+然后垄断性的话呢
+就是希望垄断
+望垄断三个字
+就是你的垄断性的话呢
+是你一个非常重要的价格保护机制
+因为我们观察到最近一年半中国的整个经济体
+它的一个核心特征
+就是说如果说你这个产业的扩张是没有门槛的
+那么它会很快把利润给消稀释掉
+因为我们会有大量的资本涌入光伏啊
+风电啊
+都是些案例
+你像容积率能这么高的一个效率
+还有这个这么低的一个企业
+生产成本到现在为止都没有办法盈利
+因为你的是一个完全竞争型的一个市场
+完全竞争型的市场
+你是没有利润可图的呃
+但是比如说你说像航信之类的系统
+它在疫情的时候
+它都是有三个亿利润的
+因为的话呢他是躺着收钱嘛
+所以我说垄断性资质的话呢
+它其实不不利于我们产生一些报复的机会
+因为垄断的话呢一般都有价格限制的呃
+比如说你机票一张纸抽成五元或者什么东西
+包括我之前跟大家说过的呃
+像可乐啊之类品牌很强
+但是它的价格就锚定在两块多一瓶
+你也没办法提价
+否则百事之类人家就有价格优势了对吧
+所以我说一般的垄断权行行业特许经营权
+包括政府的外包权
+还有一些
+这个我们说有些瑞慈里面有一些保障房对吧
+它都是政府给你划划定好价格的
+那么这些垄断性权制的话呢
+它是在这个熊市里面会有优势
+因为熊市一般经济有问题
+美元加息啊
+国内的环境动荡
+在这个阶段的话呢
+你自由漫步行的行业
+高度竞争的行业
+它都会受到影响
+要么融资率上升
+要么你企业的份额被高度挤占对吧
+那么垄断性的话呢
+至少有个价格保护
+就我可以吃个低保额
+所以我说在熊市里面垄断的话
+他这个属性是很强的
+还有给回购币注销两个字
+因为股权激励型回购实际上是劳务费用对吧
+股权激励型的回购
+就是公司拿钱买股票
+在再以工资的形式把股票发给管理层
+而基层员工又拿不到的
+所以我说股股股权回购型的激励好
+股权激励型的回购
+它实际上就是发工资
+跟你企业账上直接给他发钱是没有本质区别的
+我个人认为的话
+那只有周效性回购才能算到红利里面
+所以注销性回购
+他应该是跟前面的派线算到一起
+去除
+以你的成本做所对标的事实得到回报率的对吧
+然后什么叫做靠中央躲监管呢
+就是我跟大家说过
+包括我们看到之前那个民营高教
+鼓的那么一个团灭啊
+包括我们看到民营大学的这么一个这个非转营
+不得分红的条例
+包括像殡葬我们去年遇到的一个限价条例对吧
+这一些行为的话呢都是监管
+导致你这个行业的盈利逻辑发生了破坏
+那靠中央的话呢
+就比如说你是中央直系企业的话呢
+你的风险比较少
+其实像三大运营商
+电信啊
+四大行啊
+包括我们呃做的这个这个民航信息数据系统啊
+对吧
+他这种其实不不太会受到这么一个
+监管性措施的影响呢
+很少基本上没有
+所以我说你有央企身份的话呢
+基本上可以把行业自律
+或者呃这个这个这个监管压价
+这个风险给他躲掉
+那我觉得是比较重要的
+然后分散跟单调的话呢
+这个得分散末单调就是嗯你在熊市里面的话呢
+因为价格它有点自由漫步了
+你是有点像里昂烟蒂股
+你的这个流动性剥离掉之后
+比如说你只剩下一点点的流动性
+那它的价格的下跌是没有边界的
+这种情况之下的话呢
+我们应对这种极端风险
+你是不可捉摸的
+你只能分散对吧
+因为的话呢这个比如说像我们之前天津发展
+京投交通科技啊对吧
+你的流动性抽干之后
+它的股价一天就可以给你干个十个点跌幅啊
+或者涨八个点啊
+它每天的成交量啊可能才几10万人民币
+所以在熊市里面成交量逐渐收窄的时候
+他没那么极端
+但是会有这个方向演进的这种可能性
+所以我的建议的话呢
+就是你要考虑到就是我不要单押呃
+然后多睡觉少看盘
+就是你的很多人资产他没问题
+当你一看他的这个息率也在六个点以上的
+股息估值都在个位数
+然后穿透现金流啊
+进行现金流减去了资本开支之后
+也是大于利润的
+包括账面也没什么负债
+但但他们就是看这个股价不表现
+不表现
+很着急
+就会容易对吧
+在底部就出去了
+所以我个人建议的话呢
+你每周末考拼一下
+或者每月考拼一下
+业绩出来之后呃
+在动态权衡一下
+分散一下你的权重
+其他的话呢我觉得不用过于过于焦虑
+那以上就是我跟大家聊的一些事情嘛对吧
+今天的一些事
+然后像我们的话呢
+今天比如说你说-0.18啊之类
+跟跟大家聊的实盘
+你-0.18之类的话呢
+基本上就代表你的组合
+相对来说在这个阶段还是比较抗风险的对吧嘶
+呃然后另外像ST啊之类
+这段时间反而有些投机倒把的资金开始弄对吧
+但是中间有一些跳到特别凶的呃
+因此这个阶段的话呢
+我个人认为的话
+那就是非必要不开仓对吧
+你等17号加息之锤落地之后再说吧
+选择一下方向
+然后另外的话呢
+恒生科技真的是一个超级大熊指数啊
+超级大熊指数额买恒科的话呢真的也很痛苦
+还好我没买额
+但这个也没办法
+毕竟我跟大家说过的
+你这个恒科的很多成分股的话呢
+他那个下线不太有呃
+就是说能杀的很深嘛
+哦然后其他我也没什么能说的了
+然后我们都是高息股嘛
+9月到10月的话呢会有几笔股息
+到到时候再对应加仓就好了
+呃所以我认为有息加上有回购的话
+那这两个属性相对来说都是比较重要的是吧
+你如果没有的话
+那一旦被套住
+你只能指望市场给你
+什么时候来一轮贝塔行情了
+没有贝塔行情
+你公司本身没有阿尔法
+没有绝对回报
+那你就完了好
+以上就是我跟大家所分析的一些事情嘛
+然后今年的话压力还是比较大
+就是赚点钱是真难亏嘛
+倒也没亏嘛
+但是就是额盈利的难度太大了
+像现在每天4000家下跌
+你说你能怎么搞是吧
+所以我认为的话
+那这段时间就无为而治对吧
+只要不亏钱就没事啊</pre></details>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-19-第1272日投资记录：出差路上连续25小时，简单.html" title="第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！"><span class="mood-dot dot-中性"></span>09-19 第1272日投资记录：出差路上连续25小时，简单</a><a href="../史韭菜/2026-09-17-第1271日投资记录：美元加息落地，港A持续调整.html" title="第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。"><span class="mood-dot dot-偏多"></span>09-17 第1271日投资记录：美元加息落地，港A持续调整</a><a href="../史韭菜/2026-09-16-第1270日投资记录：A股大幅反转，H股依然疲软.html" title="第1270日投资记录：A股大幅反转，H股依然疲软。"><span class="mood-dot dot-中性"></span>09-16 第1270日投资记录：A股大幅反转，H股依然疲软</a><a href="../史韭菜/2026-09-15-第1269日投资记录：市场继续深度调整，祭出防御.html" title="第1269日投资记录：市场继续深度调整，祭出防御三字经。"><span class="mood-dot dot-偏空"></span>09-15 第1269日投资记录：市场继续深度调整，祭出防御</a><a href="../史韭菜/2026-09-14-第1268日投资记录：加息日前震荡居多，大跌后勉.html" title="第1268日投资记录：加息日前震荡居多，大跌后勉强回血！"><span class="mood-dot dot-中性"></span>09-14 第1268日投资记录：加息日前震荡居多，大跌后勉</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
+</body>
+</html>

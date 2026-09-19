@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
+}
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
+details.sub { margin: 1.6rem 0; }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
+
+/* ---- 左下索引面板 ---- */
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.45rem 0.95rem; font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
+.idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
+  padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.idx-closed .idx-panel { display: none; }
+</style>
+</head>
+<body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
+<a class="back" href="../index.html">&larr; 返回目录</a>
+<h1>第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。</h1><p class="meta">史韭菜 · 2026-09-17 · <a class="lk" href="https://www.bilibili.com/video/BV1gCeu6eE1i" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">美元加息落地港A调整，传统行业杀穿924底部，博主认为严重低估</div><div class="hero-foot"><span class="badge mood-偏多">偏多</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">美元加息落地，港A持续调整</div></div><div class="pipe-step"><div class="pipe-text">传统行业估值杀穿924底部，深度低估</div></div><div class="pipe-step"><div class="pipe-text">指数被AI科技股拉高，传统行业估值失真</div></div><div class="pipe-step"><div class="pipe-text">持仓企业低估值、高现金流、无负债</div></div><div class="pipe-step"><div class="pipe-text">坚持持有等价值回归，不做T避免卖飞</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">传统行业已跌破924底部，处于深度熊市价格</div><div class="vp-detail">头部消费股普遍比924低15-25%，部分低50%</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">指数被科技股拉高，传统行业估值失真</div><div class="vp-detail">AI企业市值数千亿，消费龙头仅几百亿</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">持仓企业估值极低、无负债、现金流强劲</div><div class="vp-detail">多为个位数市盈率，ROE半年达8-11%</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">美债加息后风险大，人民币资产更优</div><div class="vp-detail">美元贬值抵消美债收益，底层资产赚人民币</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">当前注重阿尔法绝对收益，不做T</div><div class="vp-detail">股息率5%以上长期不亏，避免卖飞</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">中国食品</span> <span class="tk-logic">账上150亿净现金，9倍市盈率，现金流爆炸性流入</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">中海</span> <span class="tk-logic">估值最低仅7倍，环比企稳，回报率6%以上</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">保利</span> <span class="tk-logic">营收利润双增，资产结构优化，8倍市盈率</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">青岛啤酒H股</span> <span class="tk-logic">股息率6.78%，历史罕见，下行空间有限</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">雪花啤酒</span> <span class="tk-logic">股息率6.32%，商誉计提后估值夸张</span></div></div><div class="tk"><span class="stance stance-看好">看好</span><div><span class="tk-name">海底捞</span> <span class="tk-logic">跌至10倍估值，价格过于夸张</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">海基亚</span> <span class="tk-logic">强力回购但空头砸盘太强，未卖出</span></div></div><div class="tk"><span class="stance stance-操作">操作</span><div><span class="tk-name">同仁堂国药</span> <span class="tk-logic">亏损割过一波</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">本月回撤</div><div class="data-value">2.77%</div><div class="data-note">恒指回撤3.77%，港元贬值0.2%</div></div><div class="data-cell"><div class="data-label">中国食品净现金</div><div class="data-value">150亿以上</div><div class="data-note">有息负债仅13亿</div></div><div class="data-cell"><div class="data-label">中国食品市盈率</div><div class="data-value">9倍</div><div class="data-note">名义估值</div></div><div class="data-cell"><div class="data-label">中国食品年利润</div><div class="data-value">25亿</div><div class="data-note">保守估计，实际可达78亿</div></div><div class="data-cell"><div class="data-label">中海市盈率</div><div class="data-value">7倍</div><div class="data-note">表内最低</div></div><div class="data-cell"><div class="data-label">保利市盈率</div><div class="data-value">8倍</div><div class="data-note">港元货币资金140亿</div></div><div class="data-cell"><div class="data-label">青岛啤酒股息率</div><div class="data-value">6.78%</div><div class="data-note">扣税5%以上</div></div><div class="data-cell"><div class="data-label">雪花股息率</div><div class="data-value">6.32%</div><div class="data-note">商誉计提后</div></div><div class="data-cell"><div class="data-label">港股通卖空比率</div><div class="data-value">26-27%</div><div class="data-note">低谷时期约15%</div></div><div class="data-cell"><div class="data-label">美债收益率</div><div class="data-value">3.5-3.75%</div><div class="data-note">加息后</div></div><div class="data-cell"><div class="data-label">全年股息</div><div class="data-value">20万以上</div></div><div class="data-cell"><div class="data-label">ROE</div><div class="data-value">中国食品8.9%、民航星6.3%、中海11.59%、保利8.78%</div><div class="data-note">半年报数据</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>科技股大跌可能拖累恒指，传统行业跟跌</div></div><div class="risk"><span class="risk-ic">⚠</span><div>空头砸盘太强，回购被抵消</div></div><div class="risk"><span class="risk-ic">⚠</span><div>传统行业业绩衰退风险</div></div><div class="risk"><span class="risk-ic">⚠</span><div>煎熬过程漫长，可能再跌20%</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>Hello
+各位亲爱的小伙伴大家好
+我是吃韭菜
+让我们来到了第1271天的一个记录
+然后今天的话呢就是一个比较大的回撤
+然后大家可以看我的右上角已经有第二个号
+无服务了
+就是换了一张英国的手机卡
+中国电信的这个英国版
+就是你可以在国内下单
+他会给你先寄过来
+然后你落地在英国激活就好了
+这个的话呢就是一些大国的好处呃
+因为我们中国的电信
+那三大运营商相关的国营企业
+中国铁塔之类
+他在英国也参与了大量的这个基建嘛
+所以他们的呃
+很多手机卡可以联用那边的服务商
+就是你到那边
+其实说实话呃
+中国电信的英国那个地方的分布
+他用的实际上是意义的基站了呃
+然后我们之前慈溪参与过那个
+长江和记忆的那个合并交易
+它底下有一个电讯公司叫做three uk
+就是啊那个我当时跟他聊过
+是那个英国的呃
+电讯公司应该排到第三大
+第四大
+他说他跟英国额第二大的电信公司
+沃达丰合并了
+就VO德峰合并之后呃
+就合并合并叫做wd phone three
+他们的话呢就超过了1亿呃
+成为了英国当地目前最大的一个电讯公司了
+呃
+然后我们的三大运营商用的是意义的基站缆呃
+所以到那个地方的话呢
+就就实际上他就就是个套皮卡嗯
+但是至少我们那边
+我们中国的电信企业
+在那边也有分部的子公司嘛
+那边在提供基础服务的呃
+所以我们可以在国内订手机卡
+在那边就使用
+你在其他国家
+如果在那边没有分部公司的话
+那你就只能到英国的飞机场上
+再去买这个手机卡
+当然那边也不贵啊
+但是呃就是说这样你比较强大的国家
+它这个方面更加方便一点嘛
+就是生活的便利度上
+因为他的综合能力比较强
+有很多的额外延业务在海外国家
+然后今天的话呢
+我们手里的四驱兄弟的话都是一个回撤
+当然回撤来说比较小了
+这个月的话我们回撤就2.77嘛
+呃恒指的话呢
+这个月的回撤的话呢在3.77对吧
+然后加上那个呃港币除以呃
+港元比上了这个人民币汇率呃
+我们可以看到他的话呢好港元比人民汇率
+这个月的话呢是贬值0.2啊对吧
+所以如果呃你跟恒指跑平的话
+那这个月可能要亏到接近四个点去了
+我们的话呢在-2.77
+主要还是因为呃估值太低了
+你真的是跌不动了
+你说你手里面没有一个是大于十估值的
+而且基本上都没债务
+现金量都蛮大的
+所以这种嗯这一种资产结构的情况之下
+我认为下行边界是有的
+因为你的估值的本身的波动范围他就是有限的
+譬如说很多呃你说纯现金的企业的话呢
+他的话呢很多的公司
+我认为当前的一个估值已经是一种变态低估了
+呃
+今年市场当中也有很多我们的B友教育教育我
+教育我不要用净现金去算嘛对吧
+但是我还是忍不住提一句啊是吧
+我也也跟大家先说一句
+敬献金这这个视角他是不对的是吧
+他是不对的
+但是我还是忍不住提一句啊
+你说像他账上172个亿的现金对吧
+负负债一共就13个亿的有息负债
+剩下都是呃他的这个行信的这个结商业务的
+那边的这个这个这个呃相对应的义务
+然后再加上他表上一部分的暗金的
+所以我说的话呢
+你满打满算
+无论如何
+你也有150亿以上的这么一个现金
+在账上对吧
+你的名义估值有九倍市盈率啊
+呃所以我说
+比如说你就拿最简单的一个模型去建模
+你账上有150个亿的净现金
+每年能够赚20多亿
+假设今年上半年有12%的增速吗
+我们假设今年就25亿利润嘛
+已经是非常保守了
+实际上今年港币的话
+能干到个接近78亿的
+所以我说你用港元计价
+你现在账上有150亿
+每年能够赚25亿对吧
+你说这个40户
+250亿是完全就是不贵啊是吧
+你150的话呢
+你一滴滴掉的话呢
+100个亿你就只有四倍
+是四倍不到市盈率
+但这个我说这个视角是有问题的
+但是我们这是一种现金收回市值的一个视角嘛
+对吧
+你哪怕不算这个呃
+你哪看看名义估值的话呢
+你也只有九倍市盈率
+关键是它有增长啊
+所以我认为的话呢呃这个阶段的话呢
+市场对他们的话呢有点变态
+低估了
+你看他的金星现金流
+今年中报的话呢
+信息现金流可是爆炸性流入的
+这个半年的话呢
+干了接近去年一整年的额现金流
+他的现金流已经到达了历史最巅峰时刻了
+因为航航航司的话呢
+它的资金开始流转嘛
+之前几年因为疫情
+航司一直在呃修复流动性
+今年航司的话呢打钱就打的很稳
+所以航线的话呢这个现金流直接原地就起飞了
+所以我认为的话呢
+我们看到这么强的一种这个现金流增长状况
+或者说表面增长的利润
+还有他账上不断积累的现金呃
+就是他现在现金170亿之前
+150亿之前
+138亿之前
+135
+这130之前120亿对啊
+之前的话呢可能90多亿
+60多亿的
+所以我们说很明显
+可以看到他的自由现金流是非常之旺盛的
+因此我说这种公司的话呢
+你给个九倍市盈率的话呢
+也有点未免过于低估了
+因为你说实话除了估计股息率
+股利支付率低了一点之外
+它的面板数据我认为是完全不差的
+加上它是有增长的好呃
+然后包括像中国食品啊
+你现在又杀到了100亿市值周围啊
+那他账上的资产结构我觉得也是非常之健康啊
+你账上的这个现金的话呢也已经增长到啊
+已经从过去的对吧
+你可以看到他的现金变化量16亿
+10亿增长到23亿
+增长到40亿
+到现在的45亿
+到后现在的59亿左右
+这是人民币啊
+你如果按照它的市值港元来计价的话呢
+这个现金都已经干到近70个亿了
+当然要乘以2/3啊
+乘以2/3的话
+那你也有四五十亿
+你的负债对应的也要乘以2/3
+但关键他没有有息负债
+都是一个营运杠杆啊
+所以我认为的话
+那就是说我们认为他的账上的钱
+满打满算净资产
+你是可以算个这个这个这个至少十多亿
+20多亿
+这么这么一个比值出来的
+也不也不也不满
+打满算算六七十亿的吧
+你算20亿总有吧
+对20亿的这个净流动性啊
+你上面的话呢加上他的这个利润的话呢
+我认为他也是一个有增长的企业是吧啊
+中报的增速啊
+营业收入利润都是在增长的
+加上他的呃
+你看你可以可以看到
+中国视频的现金流也是非常之旺盛啊
+所以我说民意估值9.94
+实际的估值也是非常低估的
+呃包括像中海跟保利啊
+这个中海的这个中保有有点小衰退嘛
+但是他的呃整体我认为的话呢
+至少环比的话呢是企稳了吧
+然后这种企业相对来说
+也正是因为他有点衰退神经
+所以他的估值是我表里最低
+他只有七嘛
+其次就是保利的八上海的营业利润
+营营收利润双增啊
+包括额
+我个人认为的话呢
+它的整个资产结构是在优化的啊
+他因为现在外投比较大嘛
+中报流出比较大
+这个是个槽点
+现金流嘶呃
+但是无论如何
+他账面的一个港元的货币资金
+也140亿级别
+我认为把总负债兜掉之后都没什么问题
+能多出50亿以上呃
+民意估值只有八啊对吧
+能多出50亿以上的净现金流
+就已经扣掉了总负债了
+假设你觉得经营经营性的负债额
+经营性的那个从最营经营性的额
+流动资产跟经营性的这么一个负债
+可以冲抵的话呢
+他设置能多出100亿的现金出来
+他的估值可能就剩50亿
+市值就是四五倍估值嘛
+所以我认为的话呢民意估值的话
+那也就民意估值的话呢也就八对吧
+哦所以这个这个这个我认为的话呢
+这个企业的话呢
+我在我看来的话都是挺优秀的
+因为他们嗯在现金流层面
+资产电子层面
+还有它整个现金流转层面
+我们说认为回报率都比较高嘛
+你像中海的话
+再往下刷的话
+那其回报率的话呢都已经要干到六点以上去了
+扣完税也在五了
+所以我认为这个阶段的话呢有点过于夸张
+然后大家过去比较喜欢那些消费股
+因为有源源不断的回购嗯
+杀的慢一点
+但是你看他也一直在跌啊对吧
+这轮的话也跌了十个点呃
+跌到14倍
+实际它的估值的话呢
+技术折旧与摊销的话呢也在13倍左右
+海底捞之类79弹枪的话已经干到十周围了
+所以我觉得这个价格有点太夸张了
+因为控股股东那个离岸税
+加上他的资金使用需使用需求
+就叫减持嘛
+呃因此我认为这种资产的话呢
+其价格的话呢有点过于夸张了
+包括呃像雪花雪花后来因为有金沙啤酒的计提
+然后后面跟着一个
+今年的话应该是应收账款的计提对吧
+那干到个17.45去了呃
+商誉的计提吗
+所以我认为的话呢
+这个息率你看都干到6.32了
+呃这个也未免有点过于夸张了吧
+哦也未免有点过于夸张了
+然后包括像那个青岛啤酒股份的H股
+也都干到死了
+这个是多么夸张的一种价格呃
+6.78的股息率
+这个的话呢在我们过去股市这么十多年
+20多年就没有给出过青岛跟雪花能给到呃
+6.5以上的股息
+扣完税也在5%以上
+那你说尽管有点衰退嫌疑
+但是他们的利润长期上来讲
+维持现在规模的80%以上
+我觉得是没问题的
+你这个西站怎么看都在4.5以上
+随后呃
+因此这个就是我跟大家所聊的
+我认为的话
+那这种的话呢
+如果你说你是一个普通人
+你在大陆地区生活的话呢
+你又找不到什么高回报的资产
+那你又买不了美债对吧
+美债人家现实干到了加完息之后
+干到了这个3.5到3.75
+但是你又买不了
+最关键的是能买
+你也不一定赚钱啊
+你看现在人民币
+因为美元它美债的这个风险越来越大
+你加息之后
+美国政府要付的财务费用更多
+他付不出来
+然后就只能不断发本金去付利息
+所以你看的话呢
+最近这种人民币的单向增值啊
+美元的这种贬值啊
+你买美债的话
+那可能啊赚一年到头来是赚了3年多呃
+3.5的美美元
+但是的话呢他只要贬值个两三个点
+你基本上就白干是吧
+当时我们买的这些资产
+他说到底这个息率的底层架构是人民币
+你以美元贬值的话呢
+不影响他账面资产的一个对于我们来说的价值
+为什么美元贬值
+对我来说
+投美债也是贬值
+因为我们最终是要换成人民币在境内消费的
+除非你润到美国去是吧
+所以的话呢就是你站在人民
+中国人的立场上来讲
+你买美债美金美金到时候换人民币换的少了嘛
+那你就没有钱赚
+但是你这些资产它的底层逻辑
+我觉得它本质上就是赚人民币
+分人民币的一种逻辑
+因为他的内地赚的都是人民币嘛
+然后他分的也是人民币
+所以我认为这个阶段的话呢
+额汇率的话呢对于这种资产的话呢
+对我们来说长期上来讲影响不大
+短期的话呢确实会影响账面浮亏
+所以这个事情的话
+很多朋友最近也在问我啊
+青岛怎么样
+海底捞怎么样
+雪花怎么样对吧
+说我聊过之后一直在跌啊
+说实话我手头也自己带跌
+但我个人的一个想法的话呢
+就这个阶段我认为是价格非常好的一个阶段了
+因为大家是站在今年的这个市场
+风格角度上面来
+因为今年市场是搞搞那种科技啊
+搞AI搞AI大革命啊
+他不是很喜欢传统行业的
+所以传统行业的话呢
+今年我也跟大家说过
+大多数七八十%以上的话呢
+今年早就已经杀到924以下的估值了是吧
+因为我刚跟大家列举的都是都是头部的消费股
+他的话呢
+你说呃百事中国可能才能算是涨上来的
+那你说像海底捞啊之类的
+你看他的月线的这种结构对吧
+你早就已经比24年的这么一个924
+多少都要都要低25个点了
+对吧啊
+我跟大家另外再举个例子
+你比如说像华润对吧
+你这个24年的924什么价格呢对吧
+你24年924到现在为止
+你都跌了25个点了
+包括我跟大家聊到的这个青皮啊等等
+我们大家比较关注
+包括举比拿比啊
+比如安井安井举例对呃
+他是啊
+他上时间比较是看不出来呃
+比如说你拿这个这个华润饮料啊
+就就怡宝之类
+你早就已经跌破那个24年这个9月多的时间
+都已经比它跌了50个点了啊
+包括像青皮啊
+你跟那个R924这个这个这个价格去比对吧
+你的话呢这个价格也比它便宜了
+这个15%
+所以我说嗯我们观察自选股里的这些企业
+你说有哪几个是比这个924的价格是贵的
+对啊
+所以这个的话呢
+也是我跟大家提出来的一个观点
+包括我们自己的实仓股
+除了中国食品
+它业绩比较好
+涨上去说
+那你这个中华券的话呢
+也是比20年的这个924要便宜3%啊
+你说像中海啊之类
+它也比这个这个这个20年的这个924
+要便宜31%或者保利对吧啊
+也比20年的这个这个这个呃九哦
+他跟924差不多
+总而言之的话呢
+我目前的这么一个想法的话呢
+就是说这些资产的价格
+它已经是一个深度熊市的价格了
+大家还觉得哦我这个市场在2万42万5
+但这些资产的价格早就已经在深度熊市了啊
+那很多朋友此时就会有一个疑问
+就是说万一我的因为我这轮指数
+他这一轮涨幅当中都是AI跟硬科技企业在涨
+我们我们见证了大量的
+原先我们在呃这个前面这个阶段
+听都没有听说过的企业
+现在大批量的出现了几千亿
+几千亿
+几万亿的市值
+对吧啊
+质朴mini max
+包括在港股重新二次二次发行的啊
+呃造诣创新啊
+打印一大堆的这个相关
+原先在港股不存在的企业
+它都在港股出现了
+然后这些公司上来
+你2000亿
+我3000亿
+他1000亿
+他无这个800多亿的这种公司的市值的话呢
+在这过程当中大量的让这个指数上涨
+而传统行业的市值不断萎缩
+但因为传统行业我刚跟大家说过呃
+我们刚刚随便举一个这个AI企业出来
+你都是上千亿市值的
+但我们消费领域里面最强的最大市值是一
+比如说百姓中国
+他也才1000亿市值对吧
+你在AI里面你算个弟弟对吧
+你排不上号的呃
+比如说跟大家说的
+像海底捞它的市值才500多亿对吧
+在AI里面你就是个边角料啊
+包括我跟大家说过的什么青岛啤酒
+雪花啤酒了这种对吧
+你一共也就514只是吧啊
+然后还是把A股市值也都算到港股的价格
+上面来才有的
+包括呃跟大家说过的这个这个这个啊
+什么华润啤酒啊之类的
+都是一些边角料
+所以你光是质朴一个企业
+你就可以把百胜中国加海底捞
+加上这个雪花啤酒
+加上青岛啤酒加在一起
+你也比不过一个质朴
+这个是为什么我跟大家说
+这个指数会失真的情况
+因为呃你雪花啤酒
+青岛啤酒
+喜力啤酒
+海底捞
+肯德基对吧
+必胜客啊
+这全部都加在一起
+你可能还不如一个质朴的市值大
+那人家涨一个点的话
+那就能抵消你这么多所有企业股跌一个点
+这个就是我说的这个指数为什么会这样
+因为这个指数现在还是个AI指数
+它是个科技指数
+它不反映传统行业的一个估值水平
+就你在这个地方高估
+你不能说我传统行业的估值高估
+你只能说我的科技股的价格是贵的
+因为这轮上涨我的是科技股的市值拉起来对吧
+所以我说这轮上涨它这个位置在高位
+代表的是科技股的价格
+在高位不代表我们传统行业的估值的高
+我们传统行业的估值是在地位的
+因为我刚刚跟大家列举的这些头部消费股
+食品饮料
+头部股
+当哪一个是比924的价格更高出15个点
+那都说出十二四价格更低
+低20个点啊
+跌15个点这样子
+所以我跟大家说
+就我个人定量角度上面来理解
+你结构性的这个熊市早就已经是深度的
+你这些传统行业的话
+那已经比上一轮熊市
+这一轮牛市开始之前的那轮熊市的底部
+还要更更深
+两三层地狱是18层地狱
+还算不上更深两三层地狱
+所以这个阶段的话呢
+这种资产的价格是匪夷所思的
+很多人觉得哦
+我这个指数继续往下杀
+但是我也跟大家说过
+我个人觉得的话呢
+这个股价我真的不会预测对吧
+但是你让我拍脑袋来算算回报率
+就是我也不聊股价跌还是涨
+你说这个青岛跟这个这个这个呃
+华润啤酒能不能再腰斩啊
+给你股息率干到10%以上
+我觉得这个概率是比较低的
+我极端极端极端看到股息干到个7.5%
+8%的话
+我觉得已经是极端夸张了
+所以这种价格的话呢
+你买进去
+我觉得下行编辑大概率你就亏20个点
+我觉得是很极端很极端了
+如果他亏20个点的话
+那传统行业要死成什么样子
+我都不知道是吧
+你亏20个点的话
+那股息再再乘以了
+这个这个这个呃
+这个这个1.1.1.2几倍的
+你的话呢就已经干到八个点股息去了
+青皮
+那我觉得的话呢
+你是比我当时买肯德基那个价格
+都要夸张一点了是吧
+呃所以这个点位的话呢也跟大家聊到过
+我目前的一些想法
+我认为的话呢大家在这个地方买这些资产
+到这个阶段
+如果说你觉得很难受
+是因为你已经跌到了
+比924更低的这个价格了
+你这个的话呢
+我觉得924的时候我们有多痛苦
+现在就有多痛苦好
+那为什么我现在的市值还比924的这个
+这个这个东西市值要高
+因为924的时候
+我的这个市值已经在呃230多万了对吧
+这个的话呢
+我们手里的企业其实都比924价格要低
+中海要低15%
+保利跟924差不多
+行情比924低10%几
+中国市比924高一点
+主要的话呢我是在中间这轮牛市的两轮利润
+我们锁住了
+就之前那轮腾讯的那个200涨到400
+那个赚了六七十万
+我不是锁住了吗
+然后的话呢两长的话呢从底部上来不是赚了
+有个两个金加在一起有个八九十万
+我也锁住了
+这就140万利润了
+然后的话呢后面之前不是又在那个呃药明生物
+从二从十块港币涨到了这个19块
+我就开始卖了对吧
+现在都涨到四五十
+但我这20块不到
+我就把它清掉了
+我那个地方赚了40万
+加在一起就够200万
+然后中间的话呢零零碎碎的对吧
+呃也在消费股上赚一点
+所以我的这个牛市过程当中
+我清仓的一些股票给我贡献了唉
+可能有个这么这么这么个200万1000的利润
+然后的话呢这一轮在两恒值2万8000点的时候
+其实还好像一直在跌
+这个这个这个2万8000的时候
+其实这些股已经跌的稀里哗啦的
+所以我那个时候觉得哦
+这些股可能已经在这个这个这个低位了对吧
+已经到924价格了
+但是不是给大家看
+我说中海跟保利已经在10年底部了
+所以我的话呢因为他们下跌的话呢
+我才买的
+不是因为上涨才买的
+我们当时那个买点
+如果你去看我们当时那几个买点对吧
+是这个样子的
+它是从这个这个这个这个三三十五块钱
+一路跌到了31左右
+我说他这轮的话呢牛市他也没涨
+一直在消化估值嘛
+所以我当时觉得可能十倍估值是个便宜的了
+所以我就买了
+你看现在跌到只有八倍估值
+这个十倍就有点回撤的由来啊
+所以我当时也是冲着这个
+这个买便宜的资产去了
+买的低嘛
+结果还要更低嘛
+所以这就是我跟大家所说的这个点位的话呢
+我认为价格是蛮便宜的啦
+非常实惠
+但是的话呢你也不能排除对吧
+过个半年我们回过来看
+现在跟我们现在回过来看
+上半年买这个东西的时候是一样的啊
+所以我说这一轮的话呢
+这个这个这一轮的接近40多万的回撤对吧
+因为我中间同仁堂国药亏过一波割过是吧啊
+然后还有一两只小打野的小票
+归归归锅那个东西加在一起亏了十来万
+加上现在手投了40万
+一共就50万回撤嘛对吧
+我原先的话做到这个这个从220万
+这轮牛市做到400万左右
+然后呃加在一起这个50万回撤是这么来的啊
+所以这个是我一整个复盘的过程
+但是你说我们当时在十倍左右高低切
+把手里面一些涨到20倍估值以上呃
+比如说二十二十倍估值以上的百胜啊
+20倍估值以上的药名卖掉
+换了这些东西嗯
+可能时间拉长来看
+可能增速会出现性价比的差异
+但到那个节点来看的话呢
+我觉得还算是高低些的
+所以我认为站到这个节点的话呢
+你说只要业绩不衰退
+你说八倍估值啊
+这个九倍估值啊
+十倍估值啊
+这样这些这些企业的奥义都蛮高的
+如果你说这个企业是赚不到钱对吧
+他的净资产没有回报率
+那你可以说这个就是我可能买了个垃圾
+他本身赚不到钱
+所以我只能这边耗着
+但是你说像这个他们的净资产收益率
+我之前也跟大家说过
+都ROE都在15%以上的
+你去搜
+你去翻一翻他们的经产收益率
+因为这都是半年报的
+半年报
+中国食品的roe是8.9%
+对啊
+你说民航星的LE是6.3%
+然后中海的LE在11.59%
+保利的RE的话呢
+在这个8.78%
+他们的话呢一半年时间就可能就干了呃
+普通企业一年的RE
+因为正常企业的话呢
+ROE能做到百分之百分之六
+7%以上就很好了
+但我们这个企业半年度
+万一半年时间就赚到了净资产的这个8%
+或者11%
+我认为的话
+那全年做到20%以上的话呢
+这个问题是不大的啊
+或者15%以上
+所以我说他们roe也蛮高
+赚钱速度也挺快的
+我认为的话呢
+如果你能锁在一个个位数市盈率的话呢
+真不至于有多大风险
+加上他钱多又没负债是吧
+所以的话呢包括小账户的话呢
+这个海基雅的话呢
+最近朋友也是说
+就是呃我没
+我没有让大家在这个海基亚出业绩的
+这个高点走掉
+但是我自己确实也没走嘛
+我没有说呃
+这个的话呢我叫我我我说我唱多
+然后我我让大家进来
+我偷偷卖卖掉
+我我都没卖过
+包括呃这个这么一个这个
+这个这个浙商证券的啊
+你说像中石啊之类
+我基本上都是持有
+对很多朋友之前说我做T
+为什么这个阶段我要不做T了呢
+因为做T的话呢
+你要考虑一个性价比问题
+就是说你做T你赚的是指甲盖那点钱对吧
+你在个位数估值的角度
+一直
+我不希望在个位数估值的角度去卖个大飞对吧
+我们以前卖飞过很多次
+这个涨了十来个点卖卖掉好
+后面翻一倍
+那个就很痛苦
+第二个是什么事情呢
+第二个事情的话
+就是说
+我不希望在这个地方给大家造成心理压力
+对吧啊
+很多朋友跟着我在低位躺平对吧
+然后看着我每天在这边踢来踢去踢赚钱
+哎然后他的话呢跟着我这边躺平
+他感觉好像这个市场的钱都被我赚走了
+给人观感不好
+但很多心态很急的朋友也要举报啊
+或者要批斗啊干什么的对吧
+所以说说我这个是假投资啊什么的
+所以我现在想这个地方大家都这么困难了
+我还来替什么的是吧
+那跟大家一起躺着算了
+其当然各位B友是可以替的啊
+你可以在上面赚指甲盖的钱啊
+或者呃在震荡市里面多赚点
+我没有来指导你的意思
+我的意思的话呢
+现在我们也30多万的体量了
+也不是说是一个很小的博主
+在这个地方你在这个地方对吧
+你赚指甲盖的钱
+然后跟其他跟你同车的人
+看着你每天这边踢上踢下赚钱
+他们心里很不是滋味的对吧
+所以这个东西我也不干了啊
+以后哪怕价格涨上去了
+我也尽量做
+降低我做题的频率了啊
+除非我本身就想卖啊
+哎我觉得顺带着做个梯形
+那以后再做T的话
+肯定都是要到想卖的价格了
+所以我是这么一个想法
+所以这一轮我也跟大家说过了
+我个人的评价的话
+那就传统行业的价格早就已经跌破924了啊
+那么我们大家所说这个阶段结构性的话呢
+就是说科技股的整体的市值支撑了这个市值
+现在的市指数高位指的是科技股在高位啊
+因为原先我们在924那轮起来
+整整个过程当中没有跳出来一个几千亿的呃
+这种AI企业这种
+所以这种东西的话大家只能自己评价
+所以我在这个点位我跟大家的一个评价观点
+就这个点位传统行业是处于严重低估的阶段啊
+然后科技股是这一轮拉升市值的这个企业
+但因为科技股都在未来
+我呢也看不清楚
+未来
+也说不清楚它高估还是低估
+但万一以后你占据了老百姓的生活当中
+给大家提供了极大的便利
+创造了很大的价值
+而产生很大的利润
+有可能对吧
+这个东西不好说啊
+但传统行业的话呢
+你说炸鸡汉堡啊
+一可乐可乐
+雪碧芬达
+他能怎么变革
+我觉得也变革不了什么对吧
+你给我说说这个肯德基怎么变革
+或者可乐未来怎么变革啊
+这个能卖十块钱一瓶
+我想也想不到这个事情
+所以我说传媒行业的话呢
+他是什么一个东西
+我们的话呢相当于就是自己家里人
+家里人已经熟的不能再熟了是吧
+也没什么好说的呃
+所以以上的话那就是我跟大家所解释的
+我目前的一些想法了啊
+然后这个阶段我也跟大家强调过很多次
+啧
+就是在市场底部煎熬的过程是很痛苦的
+煎熬的过程的话呢
+你只能像我前面几天发的防御三字经
+最后最后结尾说的对啊
+这个每周末去算一算它的价值对吧
+平时的话呢就那个多睡觉啊
+少看盘啊
+这是我的一个想法
+我白天的话看的很少
+然后等下七点多的话
+那我就要坐车
+然后晚上的话呢
+那个呃
+这个飞飞机飞到那个这个
+这个这个乌兹别克斯坦
+乌兹别克斯坦
+再转到英国去
+因为中东地区在打仗嘛
+我也怕人家一炮给我轰下来之类的
+或者临时给我取消行程之类
+所以我往中亚走了
+中亚的话呢呃我到塔什干去中转嘛对吧
+那个地方的话呢
+稍微呃这个这个经济不发达一点
+但也还行
+所以以上就是我跟大家聊的一些事情了
+然后这段时间的话呢
+我个人觉得还是要注重阿尔法
+就熊市底部多种阿尔法
+阿尔法就绝对收益
+你的这个创作回报
+我跟大家说过的
+注销性回购的金额
+加上公司本人派现的总总总总
+总金额的规划对吧
+然后再除以人
+你成本锁定的你想锁定的那个市值
+那么就是你的这个传统回报率传到回报率
+你如果你能做到五个点以上
+那么我个人认为只要业绩不衰退
+你是长期的上来讲不会亏太多的
+另外一个的话就不要有负债
+如果这个公司现金很多
+没债务
+然后RE长期维持在15%啊
+或者更高的水平
+然后你的PB你本的买点本来就在一周尾对吧
+然后他没债务
+然后你整体的阿尔法能做到五个点以上
+那么你的红利复投也是比较强的对吧
+就像我们自己的话呢
+比如说这个阶段的话呢
+全年股息至少也能干到20万以上
+反正你相对来说的话呢
+也是比那个已经脱离掉一个我们所谓的一个纯
+次贝塔的这个节奏了啊
+以上就是我跟大家所聊的一些事情吧
+然后海加的这个东西的话呢
+我认为这段时间空投实力太强啊
+嘶呃公司确实在这个这个很强力的回购
+但是干不过这些空投啊
+空投的话呢
+目前这个阶段的砸盘太强了
+你比如说每天回购个两三百万
+那空投的话呢他也做空两三百万
+那你不是抵消了吗
+呃然后大家可以看到这段时间
+港股通的整个卖空的比率对吧
+他一直是冲顶的
+之前在低谷时期的卖空比例
+大概在15%左右
+最近的话呢持续都维持在26%啊
+27%
+所以市场上面有1/4的成交量
+都是融券过来卖的
+那3/4的这个票据呃
+3/4的股票
+它本来就是那个呃一半买一半卖嘛对吧
+所以目前的话呢是个做空做空太呃
+下家的话都比较难搞啊
+所以这个阶段的话都能这样了
+然后很多朋友也提到过
+现在恒指是被科技股所拉动的
+万一恒指未来的话呢
+科技股大跌导致恒指往下跌
+那传统行业会不会跟跌
+我的答案是大概率跟着跌啊
+所以只是的话呢
+我们未来不一定就是说是那种行情结构
+也有第二种可能性
+就是传统行业的价格上涨呃
+科技股的价格往下对吧
+然后大家又互相抵消
+使使得指数稳在2.4万
+也有可能为什么我这么说
+因为传统行业现在的价格本来就低于924
+你是在一个极端熊市呃
+万一说科技股它还拖着恒指在2万多
+这个这个再耗个一两年
+中国的这个经济
+他的那个这个这个这个各项指标慢慢开始回升
+也不是复苏吧
+就是说在这个比低位
+最垃圾的状态要稍微好一点
+那么传统行业
+因为现在你像青岛雪花
+你都在十倍估值甚至更低了对吧
+你把周周率它要加回
+不是都已经在九倍多市盈率了
+那这个东西它万一从九倍多涨到十二三倍
+涨到十三四倍
+而传统行业整体往上浮20个点
+科技股往下压一点
+那你也是可以维持在这个指数在这个位置的
+所以这是我跟大家所说的
+我个人认为的话
+那你一微观的绝对低估
+它就是一个绝对的值
+你如果要结合这个宏观贝塔的这个方向
+你要去判断贝塔的大小的话
+呃贝塔的这个值的话
+那这是比较难做的啊
+呃所以以上的话呢就是我跟大家</pre></details>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-19-第1272日投资记录：出差路上连续25小时，简单.html" title="第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！"><span class="mood-dot dot-中性"></span>09-19 第1272日投资记录：出差路上连续25小时，简单</a><a href="../史韭菜/2026-09-17-第1271日投资记录：美元加息落地，港A持续调整.html" title="第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。"><span class="mood-dot dot-偏多"></span>09-17 第1271日投资记录：美元加息落地，港A持续调整</a><a href="../史韭菜/2026-09-16-第1270日投资记录：A股大幅反转，H股依然疲软.html" title="第1270日投资记录：A股大幅反转，H股依然疲软。"><span class="mood-dot dot-中性"></span>09-16 第1270日投资记录：A股大幅反转，H股依然疲软</a><a href="../史韭菜/2026-09-15-第1269日投资记录：市场继续深度调整，祭出防御.html" title="第1269日投资记录：市场继续深度调整，祭出防御三字经。"><span class="mood-dot dot-偏空"></span>09-15 第1269日投资记录：市场继续深度调整，祭出防御</a><a href="../史韭菜/2026-09-14-第1268日投资记录：加息日前震荡居多，大跌后勉.html" title="第1268日投资记录：加息日前震荡居多，大跌后勉强回血！"><span class="mood-dot dot-中性"></span>09-14 第1268日投资记录：加息日前震荡居多，大跌后勉</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
+</body>
+</html>

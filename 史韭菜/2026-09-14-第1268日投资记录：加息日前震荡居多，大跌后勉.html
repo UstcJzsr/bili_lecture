@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>第1268日投资记录：加息日前震荡居多，大跌后勉强回血！</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  /* 浅灰主题（默认） */
+  --bg: #f0f1f3; --card: #f8f9fa; --card2: #ffffff;
+  --text: #24272b; --muted: #6f7680; --line: #d9dbdf;
+  --accent: #3d4654; --chip-bg: #e7e9ec; --soft: #e4e6e9;
+
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
+  font-size: 16px; line-height: 1.75;
+  max-width: 44rem; margin: 0 auto; padding: 1.2rem 1rem 5.5rem;
+  background: var(--bg); color: var(--text);
+  transition: background 0.2s, color 0.2s;
+}
+/* 深灰主题 */
+body.t-dark {
+  --bg: #191b1d; --card: #222527; --card2: #282b2e;
+  --text: #d6d8db; --muted: #979da5; --line: #383c40;
+  --accent: #aab3bf; --chip-bg: #303438; --soft: #2c3033;
+  color-scheme: dark;
+}
+a { color: inherit; text-decoration: none; }
+a.lk { color: #4a7bd0; }
+a.lk:hover { text-decoration: underline; }
+body.t-dark a.lk { color: #7aa5e8; }
+
+h1 { font-size: 1.4rem; margin: 0.4rem 0 0.8rem; line-height: 1.45; }
+.meta { color: var(--muted); font-size: 0.86rem; }
+.back { display: inline-block; margin-bottom: 1rem; font-size: 0.9rem; color: var(--muted); }
+
+/* ---- 研报卡片 ---- */
+.card-r { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1rem 1.1rem; margin: 0.9rem 0; }
+.sec-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 0.6rem; }
+
+/* hero：一句话总结 + 情绪徽章 */
+.hero { background: var(--card2); border: 1px solid var(--line); border-radius: 14px;
+  padding: 1.1rem 1.2rem; margin: 1rem 0 0.4rem; }
+.hero-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em;
+  color: var(--muted); margin-bottom: 0.4rem; }
+.hero-text { font-size: 1.12rem; font-weight: 650; line-height: 1.6; }
+.hero-foot { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.7rem; flex-wrap: wrap; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 600;
+  padding: 0.12rem 0.65rem; border-radius: 999px; }
+/* 情绪徽章：红多绿空（A股惯例） */
+.mood-偏多 { background: #fde8e8; color: #c0392b; }
+.mood-偏空 { background: #e2f3e8; color: #1e7d43; }
+.mood-中性 { background: var(--chip-bg); color: var(--muted); }
+body.t-dark .mood-偏多 { background: #3d2325; color: #ef8a80; }
+body.t-dark .mood-偏空 { background: #1e3328; color: #6cc98f; }
+
+/* 核心观点 */
+.vp { display: flex; gap: 0.7rem; padding: 0.5rem 0; border-top: 1px dashed var(--line); }
+.vp:first-of-type { border-top: none; }
+.vp-n { flex: none; width: 1.45rem; height: 1.45rem; border-radius: 50%;
+  background: var(--chip-bg); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+.vp-point { font-weight: 600; }
+.vp-detail { color: var(--muted); font-size: 0.92rem; }
+
+/* 标的筹码 */
+.tk { display: flex; align-items: flex-start; gap: 0.55rem; padding: 0.5rem 0;
+  border-top: 1px dashed var(--line); }
+.tk:first-of-type { border-top: none; }
+.stance { flex: none; font-size: 0.75rem; font-weight: 700; padding: 0.14rem 0.55rem;
+  border-radius: 6px; margin-top: 0.12rem; }
+.stance-看好 { background: #fde8e8; color: #c0392b; }
+.stance-看空 { background: #e2f3e8; color: #1e7d43; }
+.stance-关注 { background: #e5edf9; color: #2c5faa; }
+.stance-操作 { background: #f0e9f8; color: #6b4fa3; }
+body.t-dark .stance-看好 { background: #3d2325; color: #ef8a80; }
+body.t-dark .stance-看空 { background: #1e3328; color: #6cc98f; }
+body.t-dark .stance-关注 { background: #22303f; color: #82aade; }
+body.t-dark .stance-操作 { background: #302a3d; color: #b49ae0; }
+.tk-name { font-weight: 650; }
+.tk-logic { color: var(--muted); font-size: 0.92rem; }
+
+/* 关键数据卡 */
+.data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: 0.6rem; }
+.data-cell { background: var(--card2); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.6rem 0.75rem; }
+.data-label { font-size: 0.78rem; color: var(--muted); }
+.data-value { font-size: 1.05rem; font-weight: 700; margin: 0.1rem 0; word-break: break-all; }
+.data-note { font-size: 0.78rem; color: var(--muted); }
+
+/* 逻辑链 pipeline */
+.pipe { margin: 0.2rem 0; }
+.pipe-step { position: relative; padding: 0 0 0.85rem 1.5rem; }
+.pipe-step::before { content: ""; position: absolute; left: 0.36rem; top: 0.42rem;
+  width: 0.62rem; height: 0.62rem; border-radius: 50%;
+  background: var(--chip-bg); border: 2px solid var(--accent); }
+.pipe-step::after { content: ""; position: absolute; left: 0.67rem; top: 1.15rem; bottom: -0.05rem;
+  width: 2px; background: var(--line); }
+.pipe-step:last-child::after { display: none; }
+.pipe-step:last-child { padding-bottom: 0.1rem; }
+.pipe-text { font-size: 0.95rem; }
+
+/* 风险 */
+.risk { display: flex; gap: 0.55rem; padding: 0.42rem 0; border-top: 1px dashed var(--line); }
+.risk:first-of-type { border-top: none; }
+.risk-ic { flex: none; color: #b7791f; font-weight: 700; }
+body.t-dark .risk-ic { color: #d9a441; }
+
+/* Markdown 兜底渲染 */
+.md-fb h1 { font-size: 1.15rem; margin: 1rem 0 0.5rem; }
+.md-fb h2 { font-size: 1.05rem; margin: 1.1rem 0 0.4rem; }
+.md-fb ul, .md-fb ol { padding-left: 1.4rem; }
+.md-fb p { margin: 0.5rem 0; }
+
+/* 完整字幕 */
+details.sub { margin: 1.6rem 0; }
+details.sub summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+details.sub pre { white-space: pre-wrap; word-break: break-word; font-family: inherit;
+  font-size: 0.88rem; color: var(--muted); background: var(--soft);
+  padding: 0.9rem; border-radius: 10px; margin-top: 0.5rem; }
+
+/* ---- 右上主题切换 ---- */
+.theme-btn { position: fixed; right: 1rem; top: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.4rem 0.85rem; font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+/* ---- 首页卡片 ---- */
+.h1-index { font-size: 1.5rem; margin: 0.6rem 0 0.3rem; }
+.card { display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 12px; padding: 0.85rem 1rem; margin: 0.65rem 0;
+  transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; line-height: 1.55; }
+.card-meta { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+.mood-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%;
+  margin-right: 0.3rem; vertical-align: 0.05rem; }
+.dot-偏多 { background: #c0392b; } .dot-偏空 { background: #1e7d43; } .dot-中性 { background: #9aa0a6; }
+body.t-dark .dot-偏多 { background: #ef8a80; } body.t-dark .dot-偏空 { background: #6cc98f; }
+
+/* ---- 左下索引面板 ---- */
+.idx-toggle { position: fixed; left: 1rem; bottom: 1rem; z-index: 30;
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  background: var(--card2); color: var(--text);
+  padding: 0.45rem 0.95rem; font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.idx-panel { position: fixed; left: 1rem; bottom: 3.6rem; z-index: 29;
+  width: min(19rem, calc(100vw - 2rem)); max-height: 55vh; overflow-y: auto;
+  border: 1px solid var(--line); border-radius: 10px; padding: 0.7rem 0.9rem;
+  background: var(--card2); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+.idx-panel .idx-h { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.3rem; }
+.idx-panel .idx-up { font-size: 0.85rem; color: var(--muted); margin: 0.4rem 0 0.1rem; }
+.idx-panel a { display: block; font-size: 0.85rem; line-height: 1.5;
+  padding: 0.15rem 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body.idx-closed .idx-panel { display: none; }
+</style>
+</head>
+<body>
+<button class="theme-btn" onclick="toggleTheme()">🌓 灰度</button>
+<a class="back" href="../index.html">&larr; 返回目录</a>
+<h1>第1268日投资记录：加息日前震荡居多，大跌后勉强回血！</h1><p class="meta">史韭菜 · 2026-09-14 · <a class="lk" href="https://www.bilibili.com/video/BV1WaY169EgC" target="_blank">B站原视频 ↗</a> · 官方字幕</p><div class="hero"><div class="hero-label">一句话总结</div><div class="hero-text">加息前震荡，龙湖空头占优建议观望</div><div class="hero-foot"><span class="badge mood-中性">中性</span></div></div><div class="card-r"><div class="sec-title">逻辑链条</div><div class="pipe"><div class="pipe-step"><div class="pipe-text">9月17日议息会议未落地，市场缺乏信心难成合力</div></div><div class="pipe-step"><div class="pipe-text">机构仅打提前量，仓位有限，难现单边行情</div></div><div class="pipe-step"><div class="pipe-text">权重抱团股大跌拖累指数，小盘股上涨难撑指数</div></div><div class="pipe-step"><div class="pipe-text">龙湖空头连续三日占比超50%，融券做空主导下跌</div></div><div class="pipe-step"><div class="pipe-text">龙湖债务化解慢，存货变现需两三年，股息率低无支撑</div></div><div class="pipe-step"><div class="pipe-text">建议观望，等加息落地或技术面企稳再选择方向</div></div></div></div><div class="card-r"><div class="sec-title">核心观点</div><div class="vp"><div class="vp-n">1</div><div><div class="vp-point">9月17日议息会议前难有单边做多行情</div><div class="vp-detail">加息未落地，机构仅打提前量，仓位不超1/3</div></div></div><div class="vp"><div class="vp-n">2</div><div><div class="vp-point">A股赚钱效应尚可但指数全绿</div><div class="vp-detail">3000家上涨，权重抱团股大跌拖累指数</div></div></div><div class="vp"><div class="vp-n">3</div><div><div class="vp-point">龙湖空头占绝对优势，建议观望</div><div class="vp-detail">卖空比率连续三日超50%，债务化解前难反转</div></div></div><div class="vp"><div class="vp-n">4</div><div><div class="vp-point">高股息率是天然护身符</div><div class="vp-detail">大型企业股息率6%以上接近底部特征</div></div></div><div class="vp"><div class="vp-n">5</div><div><div class="vp-point">社融数据健康，流动性强但回报率低</div><div class="vp-detail">社融增7.2%，M1增4.1%，M2增7.5%</div></div></div></div><div class="card-r"><div class="sec-title">提到的标的</div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">龙湖</span> <span class="tk-logic">空头占优，债务化解慢，建议观望等技术面企稳</span></div></div><div class="tk"><span class="stance stance-看空">看空</span><div><span class="tk-name">新城发展</span> <span class="tk-logic">货值水分大，负债藏于应付账款，变现难</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">百胜中国</span> <span class="tk-logic">再跌十几个点是不错价格，当前仍下跌趋势</span></div></div><div class="tk"><span class="stance stance-操作">操作</span><div><span class="tk-name">海吉亚</span> <span class="tk-logic">小账户主要持仓，今日涨至十块钱</span></div></div><div class="tk"><span class="stance stance-关注">关注</span><div><span class="tk-name">创新药</span> <span class="tk-logic">今日涨势好，恒生医药带动</span></div></div></div><div class="card-r"><div class="sec-title">关键数据</div><div class="data-grid"><div class="data-cell"><div class="data-label">大账户收益</div><div class="data-value">+0.37%</div><div class="data-note">弱于恒指</div></div><div class="data-cell"><div class="data-label">小账户收益</div><div class="data-value">+0.93%</div><div class="data-note">弱于恒指</div></div><div class="data-cell"><div class="data-label">龙湖卖空比率</div><div class="data-value">62.33%</div><div class="data-note">连续三日超50%</div></div><div class="data-cell"><div class="data-label">龙湖有息负债</div><div class="data-value">约1500亿</div><div class="data-note">对应1500亿货值</div></div><div class="data-cell"><div class="data-label">新城发展负债</div><div class="data-value">约550亿</div><div class="data-note">货值约600亿多在难卖区域</div></div><div class="data-cell"><div class="data-label">社融增速</div><div class="data-value">7.2%</div><div class="data-note">远高于GDP增速</div></div><div class="data-cell"><div class="data-label">M1增速</div><div class="data-value">4.1%</div></div><div class="data-cell"><div class="data-label">M2增速</div><div class="data-value">7.5%</div></div></div></div><div class="card-r"><div class="sec-title">风险提示</div><div class="risk"><span class="risk-ic">⚠</span><div>加息落地前市场震荡，单边做多风险大</div></div><div class="risk"><span class="risk-ic">⚠</span><div>龙湖空头持续做空，股价深不见底</div></div><div class="risk"><span class="risk-ic">⚠</span><div>新城发展货值水分大，负债藏于关联方</div></div><div class="risk"><span class="risk-ic">⚠</span><div>流动性强但回报率低，钱难赚</div></div></div><details class="sub"><summary>展开完整字幕</summary><pre>Hello
+各位亲爱的小伙伴大家好
+我是食韭菜
+然后今天是第1268天的一个记录
+呃
+今天的话呢大账户回0.37
+小账户的话呢回0.93呃
+其实都是比恒指稍微要弱一点啊
+但是毕竟我们说这个阶段的话呢
+额能做到尽量少亏就可以吗
+因为9月17号的话呢
+议息会议要出结果
+在此之之前的话呢
+我认为都不太会有单边做多的行情
+因为单边做做行情的话呢
+大家必须得一起有信心啊
+能形成一个合力
+现在这个阶段的话呢
+因为加息没有落地
+呃
+这这个情况之下
+大家都都有点怕
+现在很多机构就打点提前量
+但提前量的仓位不会很大的嗯
+然后A股的话呢赚钱效应还行
+有3000家上涨
+但为什么指数是全绿呢
+主要还是因为呃我们大市值的一些权重股在跌
+就中继续创啊
+呃跌5.7啊
+新易盛啊
+这种抱团股的大跌的话呢
+他们对他们的市值比较大
+所以对指数上来讲的话呢
+他们一家下跌就能够抵几十家小盘股
+呃
+然后我们自己的持仓股今天都是红的
+但是说实话像中国食品啊之类
+它都蛮弱的
+而日内的话呢大部分都在水下
+0.10.2
+然后最后尾盘竞价翻翻红
+嗯其他的话像中海啊之类的话呢
+他们的成交额的话呢
+都相对来说都已经在缩量了
+所以呃很难说这个缩完量之后
+这种行情能持续多久
+它都是一个比我认为是偏震荡吧
+这种涨幅的可信度比较低
+呃然后另外就很多朋友问我问的比较多的
+因为我们自己手里的持仓股的话呢
+大家都已经是比较熟了
+嗯这个我也没什么好说的
+这段时间的话问我问的比较多的是
+这个龙湖的这么一个下跌嗯
+因为我们曾经的话呢龙湖十块钱左右考虑过
+后面因为觉得物业之类更便宜嘛
+所以就切过去了
+龙湖的话呢呃最近屡创新低嘛
+很多朋友的话呢告诉我市净率都到0.2
+然后什么什么问我该怎么搞呃
+龙湖目前这个阶段
+我个人的一个判断就是嗯
+他在把那个债务彻底化解呃
+把债务的规模彻底降下去
+发股息之前
+他可能一直都是空头占优势的
+呃
+你看他的卖空比率
+今天高达62.33%
+也就是说1.8个亿当中的金额当中
+有可能有一个亿
+一个多亿都是在那个卖空的
+他的完全是融券融出来的
+所以呃像龙虎
+你看他这个做空比例62.3%
+三56.49%
+53.62%对吧
+连续三个交易的做空比例都在一半以上
+就市场上面的成交量一半以上
+都是别人把股票借过来再卖再做空的
+这是真的嗯
+所以龙湖这个阶段的话呢
+我觉得你没有特别高的股息的话呢
+你很难吸引资金来直接做对抗
+那么这个时候空投可能就一直占优势
+一直占优势
+因此龙湖这个阶段
+我认为股价的下跌是深不见底的
+呃你在这个阶段
+包括之前那个阶段买龙湖的人
+你都需要带有一个很强的抗性
+就是说我一直要熬到你的债务空下来为止
+然后我之前跟大家说过
+我研究龙虎主要研究哪几个角度呢
+第一个你的信用贷啊
+你的信用贷款啊
+啊你的信用贷转化成那个经营贷的比例有多少
+我目前来看在中报里面呃
+这个经营贷的比重已经是占绝对多数了
+所以这个问题我觉得是解决的比较好了
+就他没有信用贷集中挤兑的问题
+因为经营贷的话是可以一直滚动的
+第二个的话呢
+它的融资费率也控的也是比较低的
+我认为这两个问题我相对来说比较认可
+但是我不认不认可的地方在哪里呢
+就是说他的一个货值变现的太慢了
+因为大家知道龙湖
+比如说你说1500亿左右的一个有息负债了
+他是不可能靠天街的租金去还的
+你如果靠天街的租金去还
+你一年合共赚个几十个亿算很多了
+天街的租金啊
+加上你的龙虎的冠玉是吧
+你你你你靠收租的这些钱还完财务费用之后
+本来就是能够多个几个亿出来
+你是不可能还掉1500亿的债务的
+所以1500亿的债务的话
+需要把他以前前面几年买了这么多地造完
+去变成商品房卖掉
+去划掉之后
+你卖房子把你账上的这个存货
+1500亿的存货变现出来
+才能够去还掉这个债务的本金呃
+你的天街的租金啊
+还有你的我跟大家所说的这他的这些呃
+惯于单身公寓之类的
+这个租金租金毕竟是占少数的啊
+租金的话呢一年能赚几十个亿
+算多了
+你顶不住
+扣掉财务费用之后抵消不了呃
+这个债务多少本金呢
+因此我说龙湖目前最核心的问题是什么
+他他这个楼他的这个是房开业务的话呢
+这个还债太慢了啊
+但是龙湖至少还有1500亿的货值
+能对得上他这个1500亿的有息负债
+就是你怎么样快速变现的问题
+我觉得希望比较差的是那个新城发展
+但是新城发展有很多很多
+他的这么一个额股东之类都戾气很重
+那些人在古巴里面
+你像新城发展的话呢
+比如说它的负债的话呢
+还有接近这个550亿
+但是他的这个货值的话呢
+呃相对来说的话呢
+因为新城的货值的话呢
+在一二线
+在一线城市的货值很少了
+他600亿的货值
+绝大部分的话呢都是在一些很难卖的地方呃
+龙湖的话呢他的地都在一线城市
+所以龙湖我觉得在1500亿中间
+有个六七百亿以上
+是能是能最终是能兑现出来的
+呃星辰的话呢
+我觉得他的这个水分相对来说比较大一些
+但是星辰他的优点嘶额在于
+他的这个负债的总额相对比龙虎小很多
+他只有551
+但是他的现金也比较少嘛
+总而言之的话呢
+我认为龙湖它你说现在这个结果
+不是基本面的问题
+你每天下跌百分之
+每天做空68%的54%
+这种它是一种完全是一种空头占绝对多数的
+一种情况了
+因此的话呢怎么样去打碎这个空头做空连环
+就是说你要么发高股息
+吸引一些长线资金进来做对抗
+你要么的话呢就是把你的债务快速的还掉
+就明显的让大家感觉逻辑反转的这个情况
+现在龙湖的话呢
+我觉得他就是有点鸡肋
+有点半死不活的
+就是你的话呢需要几年时间
+把账上1576亿的存货
+至少变个一半出来
+抵消掉债务的1/3以上
+那么你才可以说哦
+我我的话呢可能这个对吧
+可能会有这个反转一期
+另外龙湖的话
+他对额
+他对关联关联方的这么一个东西
+是清的比较干净的星辰
+他的负债的话呢是藏的比较厉害
+因为呃新城的话呢
+他的话呢这个他的负债都藏在应应付账款啊
+应急费用他主要拖欠关联方为主
+龙湖的话呢
+他的话呢主要还是有息负债占大头嘛
+我觉得新城那种能省财务费用嘶
+呃比如说龙湖的话呢
+他3300亿当中有1000有1500个亿左右
+都是有息负债嘛
+剩余经营性债务1500亿呃
+星辰这种的话呢
+他的话呢实际上你看他的负债
+他的负债1700亿当中
+这个有息负债是一是500个亿嘛
+他的这个经济性债务其实有1200
+200多亿的啊
+因此额我觉得新城的话呢
+这个进行债务的比重更大一些
+龙湖的话呢他主要被银行贷
+所以龙湖其实对他的关联方来说是比较友好的
+总而言之这个阶段的话呢
+如果你让我去对龙湖发
+就发表一个评价
+我个人建议的话呢
+就是观望为主啊
+呃要么你等技术面企稳再说
+这个阶段空头占多数
+我认为的话
+那不是个基本面能对抗的一个事情
+第二个是什么事情呢
+龙湖目前的一个节奏点来讲
+我个人认为的话呢
+你要么把息率拉高
+你息率拉不高的话呢
+他现在也没法拉高对吧
+大家都说还债
+所以你的话就空耗时间
+你要耗个两三年时间把存货兑现出来
+把有戏附加抵掉很多
+你才能看到他的阿尔法改变的希望
+否则你阿尔法很低的时候
+你纯吃贝塔
+贝塔又遇到了这种我们所说的话呢
+空头疯狂做空的这个情况
+那我们也是很无奈了
+你硬是要说PB测他绝对是便宜的
+好PPPC它绝对是便宜的
+但是没办法嘛
+你毕竟这个阶段你画在你也不可能分红
+你不分红的情况之下
+那你这个股价的话
+那就没有支撑性
+大家可以随便做空
+我也也跟大家强调过很多
+一般来说对于这种大型企业
+那个股息率干到六个点以上的话
+那绝对是一个接近底部的一种特征了
+除非你的利润有大跌呃
+所以以上就是我的观点吧
+也就是为什么我在审美当中跟大家说
+就我们买这些企业呃
+他的这个吸力的话呢
+相对来说你能看到一个6.12啊
+看到一个呃5.9啊这种样子是吧
+所以我认为的话那就是吸率高
+它是一个天然的一个护身符啊
+你否则的话呢别人做空做做起来
+你很难去跟他对抗的
+因为你自己的信心也对吧
+没有办法形成合力
+大家都化作虫鸟兽散啊这么一种情况
+嗯所以上的话呢就是我跟大家聊到的
+我觉得这个确实很残酷啊
+很残酷呃
+然后另外的话呢就这段时间的话呢
+也跟大家说过啊
+我个人觉得在99月17号之前
+你不用过分的去什么进攻啊
+干什么
+你除非是有很多空的仓位
+那么的临时打点提前量
+提前量的话呢
+打个1/3算多了
+这个阶段的话呢
+不太可能出现那种单边极致的行情啊
+你万一踏空啊
+就怎么怎么怎么样啊
+然后社融出来的话呢
+社融增长7.2%
+自动数据都很健康的
+因为它的增速远高于GDP增速
+说明社会货币的流通
+广义货币啊
+M1增长4.1
+M2增长7.5都还行啊
+没有说什么出现很大的雷的啊
+所以为什么我们的流动性这么强的情况之下
+大家感觉钱很难赚的
+主要还是因为回报率跟这个流动性是两码事啊
+否则的话呢我们不可能出现
+现在固定资产投资是衰退10%几
+而利率是最低的这个特征了对吧
+你应该是一个正相关关系嘛
+嗯然后其他的话呢我也跟大家说过
+百胜中国的话
+那我建议如果能跌十几个点的话
+那是很不错的价格了
+现在这个价格的话呢再观望观望吧
+反正还在下跌趋势
+嗯然后今天创新药涨的蛮厉害
+恒生医药带着一堆医药股在涨啊
+所以我的小账户的话呢
+这个主要是吃了个海吉亚了
+海基亚还这价涨的多一点
+为了个十块钱
+那当然今天他有没他的回购还没披露出来啊
+啧额以上的话就是我的一些想法了
+这个月的话呢也是有点滑铁卢
+就是上个月的连续大跌
+把我的收益率也干崩了
+哎近3月还算可以
+今年的话呢还复着嘞
+还复制唉
+再说吧啊再说嗯
+那就那么些事情跟大家简单简单更新一下
+然后另外的话呢我个人觉得这个阶段的话呢
+主要是9月时期加息落地之后再选择方向吧
+啊但到现在都很难弄的
+嗯以上就是我的一些</pre></details>
+<button class="idx-toggle" onclick="toggleIdx()">☰ 索引</button><div class="idx-panel" id="idxPanel"><div class="idx-h">📑 索引</div><div class="idx-up">史韭菜</div><a href="../史韭菜/2026-09-19-第1272日投资记录：出差路上连续25小时，简单.html" title="第1272日投资记录：出差路上连续25小时，简单记录下，非常抱歉！"><span class="mood-dot dot-中性"></span>09-19 第1272日投资记录：出差路上连续25小时，简单</a><a href="../史韭菜/2026-09-17-第1271日投资记录：美元加息落地，港A持续调整.html" title="第1271日投资记录：美元加息落地，港A持续调整，传统行业大多杀穿924底部。"><span class="mood-dot dot-偏多"></span>09-17 第1271日投资记录：美元加息落地，港A持续调整</a><a href="../史韭菜/2026-09-16-第1270日投资记录：A股大幅反转，H股依然疲软.html" title="第1270日投资记录：A股大幅反转，H股依然疲软。"><span class="mood-dot dot-中性"></span>09-16 第1270日投资记录：A股大幅反转，H股依然疲软</a><a href="../史韭菜/2026-09-15-第1269日投资记录：市场继续深度调整，祭出防御.html" title="第1269日投资记录：市场继续深度调整，祭出防御三字经。"><span class="mood-dot dot-偏空"></span>09-15 第1269日投资记录：市场继续深度调整，祭出防御</a><a href="../史韭菜/2026-09-14-第1268日投资记录：加息日前震荡居多，大跌后勉.html" title="第1268日投资记录：加息日前震荡居多，大跌后勉强回血！"><span class="mood-dot dot-中性"></span>09-14 第1268日投资记录：加息日前震荡居多，大跌后勉</a></div><script>function toggleIdx(){document.body.classList.toggle('idx-closed')}if(matchMedia('(max-width:640px)').matches){document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('idx-closed')})}</script>
+<script>(function(){
+  var saved = null; try { saved = localStorage.getItem('grayTheme'); } catch(e) {}
+  var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if (dark) document.addEventListener('DOMContentLoaded', function(){ document.body.classList.add('t-dark'); });
+  window.toggleTheme = function(){
+    document.body.classList.toggle('t-dark');
+    try { localStorage.setItem('grayTheme',
+      document.body.classList.contains('t-dark') ? 'dark' : 'light'); } catch(e) {}
+  };
+})();</script>
+</body>
+</html>
